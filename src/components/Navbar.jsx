@@ -12,11 +12,15 @@ import { WiDaySunny, WiMoonWaxing6 } from 'react-icons/wi'
 const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
-    <Box 
-      p="2em" 
-      w="100%" 
-      pos="fixed" 
-      boxShadow={colorMode === 'light' ? 'lg' : '2xl'}
+    <Box
+      as='nav'
+      p="2em 3em" 
+      w="100%"
+      pos='fixed'
+      zIndex={1} /* Not working??? */
+      /* 
+        Add shadow when user scrolls down
+      */
     >
       <Flex
         gap='2em'
@@ -32,7 +36,7 @@ const Navbar = () => {
           marginLeft="auto"
           onClick={toggleColorMode}
         >
-          Toggle          
+          Toggle     
         </Button>
       </Flex>
     </Box>

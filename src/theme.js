@@ -3,12 +3,9 @@ import { extendTheme } from '@chakra-ui/react'
 const styles = {
   global: {
     body: {
-      fontFamily: `'Open Sans', sans-serif`
+      fontFamily: `'Open Sans', sans-serif`,
     },
-    Link: {
-      textDecoration: 'none'
-    }
-  }
+  },
 }
 
 const config = {

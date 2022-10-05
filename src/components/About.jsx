@@ -1,10 +1,13 @@
 import React from 'react'
+import {
+  Container,
+} from '@chakra-ui/react'
+import ME from '../assets/pic.png'
 
 const About = () => {
   return (
-    <section id="about">
-      
-    </section>
+    <Container>
+    </Container>
   )
 }
 

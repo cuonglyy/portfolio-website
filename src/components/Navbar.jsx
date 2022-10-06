@@ -36,7 +36,7 @@ const Navbar = () => {
           marginLeft="auto"
           onClick={toggleColorMode}
         >
-          Toggle     
+          Toggle
         </Button>
       </Flex>
     </Box>

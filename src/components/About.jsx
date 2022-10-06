@@ -1,12 +1,22 @@
 import React from 'react'
 import {
   Container,
+  Flex,
 } from '@chakra-ui/react'
-import ME from '../assets/pic.png'
+import AnimatedText from './AnimatedText'
+
 
 const About = () => {
   return (
-    <Container>
+    <Container
+      p='5em 0'
+      maxW='container.md'
+    >
+      <Flex
+        justifyContent='center'
+      >
+        Hello, this is an animated text
+      </Flex>
     </Container>
   )
 }

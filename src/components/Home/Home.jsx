@@ -8,17 +8,17 @@ import {
   Heading
 } from '@chakra-ui/react'
 import ME from '../../assets/pic.png'
+import CTA from './CTA.jsx'
 
 const Home = () => {
   return (
     <Container
       p='5em 0'
-      maxW='container.sm'
-      h='auto'
+      maxW='container.md'
     >
       <Grid
         templateColumns='1fr 2fr'
-        gap={6}
+        gap={10}
       >
         <Box
           bg='blue.100'
@@ -34,16 +34,15 @@ const Home = () => {
             objectPosition='40% 60%'
           />
         </Box>
+
         <Flex
           flexDir='column'
+          p='2em 0'
           gap={2}
         >
-          <Heading size='xl'>
-            Hello, I'm Cuong.
-          </Heading>
-          <Heading size='xl'>
-            Full-Stack Developer
-          </Heading>
+          <Heading size='xl'>Hello, I'm Cuong.</Heading>
+          <Heading size='xl'>A Full-Stack Developer</Heading>
+          <CTA marginTop='auto' />
         </Flex>
       </Grid>
     </Container>

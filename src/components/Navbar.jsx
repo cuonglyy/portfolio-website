@@ -30,7 +30,7 @@ const Navbar = () => {
         <Link href="#about">About</Link>
         <Link href="#skills">Skills</Link>
         <Link href="#Projects">Projects</Link>
-        <Link href="#contact">Contact Me!</Link>
+        <Link href="#contact">Contact</Link>
         <Button
           leftIcon={colorMode === 'light' ? <WiDaySunny/> : <WiMoonWaxing6/>}
           marginLeft="auto"

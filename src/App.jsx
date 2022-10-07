@@ -9,10 +9,7 @@ function App() {
   return (
     <>
       <NavBar />
-      <Box 
-        as='main'
-        pt='6.5em'
-      >
+      <Box as='main' pt='6.5em'>
         <Home />
         <About />
       </Box>

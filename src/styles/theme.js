@@ -5,6 +5,9 @@ const styles = {
     body: {
       fontFamily: `'Open Sans', sans-serif`,
     },
+    html: {
+      scrollBehavior: "smooth"
+    }
   },
 }
 
@@ -13,9 +16,20 @@ const config = {
   useSystemColorMode: false
 }
 
+const components = {
+  Link: {
+    baseStyle: {
+      _hover: {
+        textDecoration: "none",
+      },
+    }
+  },
+}
+
 const overrides = {
   styles,
-  config
+  config,
+  components
 }
 
 const theme = extendTheme(overrides);

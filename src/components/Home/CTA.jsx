@@ -10,19 +10,24 @@ import {
 const CTA = (props) => {
   return (
     <Flex gap={4} {...props}>
-      <Button colorScheme='blue' size='md'>
+      <Button 
+        colorScheme='blue' 
+        size={['sm','md','md']}
+      >
         <Link
           href='#contact'
-          style={{'textDecoration':'none'}}
         >
           Let's talk!
         </Link>
       </Button>
 
-      <Button colorScheme='blue' size='md'>
+      <Button 
+        colorScheme='blue' 
+        size={['sm','md','md']}
+      >
         <Link 
           target='_blank'
-          style={{'textDecoration':'none'}}
+          /* Make sure to upload resume on google drive and insert here */
           href={RESUME}
         >
           View CV

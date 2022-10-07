@@ -3,7 +3,7 @@ import {
   Container,
   Flex,
 } from '@chakra-ui/react'
-import AnimatedText from './AnimatedText'
+
 
 
 const About = () => {
@@ -12,10 +12,8 @@ const About = () => {
       p='5em 0'
       maxW='container.md'
     >
-      <Flex
-        justifyContent='center'
-      >
-        Hello, this is an animated text
+      <Flex justifyContent='center'>
+        
       </Flex>
     </Container>
   )

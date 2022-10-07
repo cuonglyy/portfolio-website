@@ -1,0 +1,18 @@
+.typed-cursor {
+  font-size: 36px;
+}
+
+
+/* ================== MEDIA QUERIES (MEDIUM DEVICES) ================== */
+@media screen and (max-width: 1024px) {
+  .typed-cursor {
+    font-size: 32px;
+  }
+}
+
+/* ================== MEDIA QUERIES (SMALL DEVICES) ================== */
+@media screen and (max-width: 600px) {
+  .typed-cursor {
+    font-size: 24px;
+  }
+}

@@ -1,4 +1,6 @@
 import { extendTheme } from '@chakra-ui/react'
+import Link from './Link.js'
+import MenuItem from './MenuItem.js'
 
 const styles = {
   global: {
@@ -17,13 +19,8 @@ const config = {
 }
 
 const components = {
-  Link: {
-    baseStyle: {
-      _hover: {
-        textDecoration: "none",
-      },
-    }
-  },
+  Link,
+  MenuItem
 }
 
 const overrides = {

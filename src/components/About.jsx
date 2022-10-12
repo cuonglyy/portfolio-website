@@ -1,7 +1,7 @@
 import React from 'react'
 import {
   Container,
-  Flex,
+  Heading,
 } from '@chakra-ui/react'
 
 
@@ -9,12 +9,11 @@ import {
 const About = () => {
   return (
     <Container
-      p='5em 0'
+      mt={16}
       maxW='container.md'
     >
-      <Flex justifyContent='center'>
-        
-      </Flex>
+      <Heading size='md' textAlign='center'>Get to know</Heading>
+      <Heading size='xl' textAlign='center'>About Me</Heading>
     </Container>
   )
 }

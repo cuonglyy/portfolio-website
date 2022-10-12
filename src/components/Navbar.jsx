@@ -1,46 +1,188 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {
-  Flex,
   Link,
   Box,
   useColorMode,
-  Button
+  Button,
+  HStack,
+  Menu,
+  MenuButton,
+  IconButton,
+  MenuItem,
+  MenuList,
+  useColorModeValue,
 } from "@chakra-ui/react"
-import { WiDaySunny, WiMoonWaxing6 } from 'react-icons/wi'
+import { WiDaySunny, WiMoonAltWaningGibbous2 } from 'react-icons/wi'
+import { AiOutlineMenu } from 'react-icons/ai'
 
 
 const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
+  const bgColor = useColorModeValue('white', 'gray.800')
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => setIsOpen(!isOpen);
+  const [activeNav, setActiveNav] = useState('#');
+  const [scrollY, setScrollY] = useState(0);
+  useEffect( () => {
+    const onScroll = () => setScrollY(window.pageYOffset);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+
   return (
     <Box
       as='nav'
-      p="2em 3em" 
+      p={["32px 32px","32px 40px"]}
       w="100%"
       pos='fixed'
-      zIndex={1} /* Not working??? */
-      /* 
-        Add shadow when user scrolls down
-      */
+      zIndex={1}
+      boxShadow={scrollY === 0 ? 'none' : 'lg'}
+      bg={bgColor}
     >
-      <Flex
-        gap='2em'
-        align='center'
+      <HStack
+        gap={[2, 2, 32]}
+        align={['center', 'center', 'center']}
+        justify={['space-between', 'space-between', 'space-between']}
       >
-        <Link href="#">Home</Link>
-        <Link href="#about">About</Link>
-        <Link href="#skills">Skills</Link>
-        <Link href="#Projects">Projects</Link>
-        <Link href="#contact">Contact</Link>
         <Button
-          leftIcon={colorMode === 'light' ? <WiDaySunny/> : <WiMoonWaxing6/>}
-          marginLeft="auto"
           onClick={toggleColorMode}
+          border='1px solid'
+          fontSize={['1.5em', '1.5em', '1.5em']}
         >
-          Toggle
+          {colorMode === 'light' ? <WiDaySunny/> : <WiMoonAltWaningGibbous2/>}
         </Button>
-      </Flex>
+
+        /* ======= Displays for mobile users ======= */
+        <Menu>
+          <MenuButton
+            as={IconButton}
+            icon={<AiOutlineMenu/>}
+            display={{ base: 'block', sm: 'none', md: 'none'}}
+            onClick={toggle}
+            border='1px solid'
+            p={2.5}
+            borderRadius={4}
+          />
+          <MenuList>
+            <MenuItem>
+              <Link 
+                href="#"
+                width='100%'
+                onClick={ () => setActiveNav('#')}
+              >
+                Home
+              </Link>
+            </MenuItem>
+            <MenuItem>
+              <Link 
+                href="#about"
+                width='100%'
+              >
+                About
+              </Link>
+            </MenuItem>
+            <MenuItem>
+              <Link 
+                href="#skills"
+                width='100%'
+              >
+                Skills
+              </Link>
+            </MenuItem>
+            <MenuItem>
+              <Link
+                href="#projects"
+                width='100%'
+              >
+                Projects
+              </Link>
+            </MenuItem>
+            <MenuItem>
+              <Link 
+                href="#contact"
+                width='100%'
+              >
+                Contact
+              </Link>
+            </MenuItem>
+          </MenuList>
+        </Menu>
+
+        /* ======== Displays for desktop and tablet users ======== */
+        <HStack
+          display={{ base: 'none', sm: 'flex', md: 'flex'}}
+          gap={[0, 0, 9]}
+          spacing={0}
+        >
+          <Link 
+            href="#" 
+            px={2} 
+            py={2}
+            onClick={ () => setActiveNav('#')}
+            variant={ 
+              activeNav === '#' && colorMode === 'dark' ? 'nav-link-active-dark'
+              : activeNav === '#' ? 'nav-link-active-light'
+              : 'nav-link'
+            }
+          >
+            Home
+          </Link>
+          <Link 
+            href="#about" 
+            px={2} 
+            py={2}
+            onClick={ () => setActiveNav('#about')}
+            variant={
+              activeNav === '#about' && colorMode === 'dark' ? 'nav-link-active-dark'
+              : activeNav === '#about' ? 'nav-link-active-light'
+              : 'nav-link'}
+          >
+            About
+          </Link>
+          <Link
+            href="#skills"
+            px={2}
+            py={2}
+            onClick={ () => setActiveNav('#skills')}
+            variant={
+              activeNav === '#skills' && colorMode === 'dark' ? 'nav-link-active-dark'
+              : activeNav === '#skills' ? 'nav-link-active-light'
+              : 'nav-link'
+            }
+          >
+            Skills
+          </Link>
+          <Link 
+            href="#Projects" 
+            px={2} 
+            py={2}
+            onClick={ () => setActiveNav('#projects')}
+            variant={
+              activeNav === '#projects' && colorMode === 'dark' ? 'nav-link-active-dark'
+              : activeNav === '#projects' ? 'nav-link-active-light'
+              : 'nav-link'
+            }
+          >
+            Projects
+          </Link>
+          <Link 
+            href="#contact" 
+            px={2} 
+            py={2}
+            onClick={ () => setActiveNav('#contact')}
+            variant={
+              activeNav === '#contact' && colorMode === 'dark' ? 'nav-link-active-dark'
+              : activeNav === '#contact' ? 'nav-link-active-light'
+              : 'nav-link'
+            }
+          >
+            Contact
+          </Link>
+        </HStack>
+      </HStack>
     </Box>
   );
 };
 
-export default Navbar;
+export default Navbar

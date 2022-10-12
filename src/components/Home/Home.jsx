@@ -48,7 +48,7 @@ const Home = () => {
         >
           <Flex
             flexDir='column'
-            p={['0', '2.5em 0', '2.5em 0']}
+            p={['0', '40px 0', '40px 0']}
             gap={[2, 1, 2]}
             alignItems={['center', 'flex-start', 'flex-start']}
           >

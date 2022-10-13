@@ -14,12 +14,7 @@ function App() {
       <NavBar />
       <Box as='main' pt='6.5em'>
         <Home />
-        <Divider 
-          orientation='horizontal'
-          m='140px auto 0 auto'
-          w='85%'
-          
-        />
+        <Divider />
         <About />
       </Box>
     </>

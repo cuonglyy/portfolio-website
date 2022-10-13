@@ -2,6 +2,7 @@ import { extendTheme } from '@chakra-ui/react'
 import Link from './Link.js'
 import MenuItem from './MenuItem.js'
 import Text from './Text.js'
+import Divider from './Divider.js'
 
 const styles = {
   global: {
@@ -22,7 +23,8 @@ const config = {
 const components = {
   Link,
   MenuItem,
-  Text
+  Text,
+  Divider
 }
 
 const overrides = {

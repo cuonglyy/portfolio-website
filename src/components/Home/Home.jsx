@@ -79,7 +79,6 @@ const Home = () => {
             />
           </Flex>
         </GridItem>
-
       </Grid>
     </Container>
   );

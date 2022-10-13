@@ -1,8 +1,10 @@
-import { defaultStyleConfig } from '@chakra-ui/react'
+import { defineStyleConfig } from '@chakra-ui/react'
 
-const Divider = defaultStyleConfig({
+const Divider = defineStyleConfig({
   baseStyle: {
-
+    orientation: 'horizontal',
+    m: '150px auto 0 auto',
+    w:'85%',
   }
 
 });

@@ -146,6 +146,7 @@ const Navbar = () => {
           
           {/* Menu displays for small screens (mobile devices) */}
         <Box
+          display={['block', 'none', 'none']}
           mt={[10, 0, 0]}
         >
           <Collapse

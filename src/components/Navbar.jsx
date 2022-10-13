@@ -42,7 +42,11 @@ const Navbar = () => {
       w="100%"
       pos='fixed'
       zIndex={1}
-      boxShadow={scrollY === 0 ? 'none' : 'lg'}
+      boxShadow={
+        scrollY === 0 && isOpen ? 'lg' 
+        : scrollY !== 0 ? 'lg'
+        : 'none'
+      }
       bg={bgColor}
     >
         <Button
@@ -65,10 +69,84 @@ const Navbar = () => {
           p={2.5}
           borderRadius={4}
         />
-        
-        {/* Menu displays for small screens (mobile devices) */}
+
+        {/* Navbar appears for desktop & tablet users */}
+        <Box>
+          <HStack
+            display={{ base: 'none', sm: 'flex', md: 'flex'}}
+            justifyContent='flex-end'
+            gap={[0, 0, 9]}
+            spacing={0}
+          >
+            <Link 
+              href="#" 
+              px={2} 
+              py={2}
+              onClick={ () => setActiveNav('#')}
+              variant={ 
+                activeNav === '#' && colorMode === 'dark' ? 'nav-link-active-dark'
+                : activeNav === '#' ? 'nav-link-active-light'
+                : 'nav-link'
+              }
+            >
+              Home
+            </Link>
+            <Link 
+              href="#about" 
+              px={2} 
+              py={2}
+              onClick={ () => setActiveNav('#about')}
+              variant={
+                activeNav === '#about' && colorMode === 'dark' ? 'nav-link-active-dark'
+                : activeNav === '#about' ? 'nav-link-active-light'
+                : 'nav-link'}
+            >
+              About
+            </Link>
+            <Link
+              href="#skills"
+              px={2}
+              py={2}
+              onClick={ () => setActiveNav('#skills')}
+              variant={
+                activeNav === '#skills' && colorMode === 'dark' ? 'nav-link-active-dark'
+                : activeNav === '#skills' ? 'nav-link-active-light'
+                : 'nav-link'
+              }
+            >
+              Skills
+            </Link>
+            <Link 
+              href="#Projects" 
+              px={2} 
+              py={2}
+              onClick={ () => setActiveNav('#projects')}
+              variant={
+                activeNav === '#projects' && colorMode === 'dark' ? 'nav-link-active-dark'
+                : activeNav === '#projects' ? 'nav-link-active-light'
+                : 'nav-link'
+              }
+            >
+              Projects
+            </Link>
+            <Link 
+              href="#contact" 
+              px={2} 
+              py={2}
+              onClick={ () => setActiveNav('#contact')}
+              variant={
+                activeNav === '#contact' && colorMode === 'dark' ? 'nav-link-active-dark'
+                : activeNav === '#contact' ? 'nav-link-active-light'
+                : 'nav-link'
+              }
+            >
+              Contact
+            </Link>
+          </HStack>
+          
+          {/* Menu displays for small screens (mobile devices) */}
         <Box
-          mt={10}
+          mt={[10, 0, 0]}
         >
           <Collapse
             in={isOpen}
@@ -76,96 +154,75 @@ const Navbar = () => {
             <VStack
               mt={5}
               textAlign='center'
-              gap={2}
             >
-              <Link
-                href="#"
-                width='100%'
-              >
-                Home
-              </Link>
-              <Link
-                href="#about"
-                width='100%'
-              >
-                About
-              </Link>
+              <Link 
+                href="#" 
+                px={2} 
+                py={2}
+                onClick={ () => setActiveNav('#')}
+                variant={ 
+                  activeNav === '#' && colorMode === 'dark' ? 'nav-link-active-dark'
+                  : activeNav === '#' ? 'nav-link-active-light'
+                  : 'nav-link'
+                }
+                >
+                  Home
+                </Link>
+                <Link 
+                  href="#about" 
+                  px={2} 
+                  py={2}
+                  onClick={ () => setActiveNav('#about')}
+                  variant={
+                    activeNav === '#about' && colorMode === 'dark' ? 'nav-link-active-dark'
+                    : activeNav === '#about' ? 'nav-link-active-light'
+                    : 'nav-link'}
+                >
+                  About
+                </Link>
+                <Link
+                  href="#skills"
+                  px={2}
+                  py={2}
+                  onClick={ () => setActiveNav('#skills')}
+                  variant={
+                    activeNav === '#skills' && colorMode === 'dark' ? 'nav-link-active-dark'
+                    : activeNav === '#skills' ? 'nav-link-active-light'
+                    : 'nav-link'
+                  }
+                >
+                  Skills
+                </Link>
+                <Link 
+                  href="#Projects" 
+                  px={2} 
+                  py={2}
+                  onClick={ () => setActiveNav('#projects')}
+                  variant={
+                    activeNav === '#projects' && colorMode === 'dark' ? 'nav-link-active-dark'
+                    : activeNav === '#projects' ? 'nav-link-active-light'
+                    : 'nav-link'
+                  }
+                >
+                  Projects
+                </Link>
+                <Link 
+                  href="#contact" 
+                  px={2} 
+                  py={2}
+                  onClick={ () => setActiveNav('#contact')}
+                  variant={
+                    activeNav === '#contact' && colorMode === 'dark' ? 'nav-link-active-dark'
+                    : activeNav === '#contact' ? 'nav-link-active-light'
+                    : 'nav-link'
+                  }
+                >
+                  Contact
+                </Link>
             </VStack>
           </Collapse>
         </Box>
-
-        {/* Navbar appears for desktop & tablet users */}
-        <HStack
-          display={{ base: 'none', sm: 'flex', md: 'flex'}}
-          justifyContent='flex-end'
-          gap={[0, 0, 9]}
-          spacing={0}
-        >
-          <Link 
-            href="#" 
-            px={2} 
-            py={2}
-            onClick={ () => setActiveNav('#')}
-            variant={ 
-              activeNav === '#' && colorMode === 'dark' ? 'nav-link-active-dark'
-              : activeNav === '#' ? 'nav-link-active-light'
-              : 'nav-link'
-            }
-          >
-            Home
-          </Link>
-          <Link 
-            href="#about" 
-            px={2} 
-            py={2}
-            onClick={ () => setActiveNav('#about')}
-            variant={
-              activeNav === '#about' && colorMode === 'dark' ? 'nav-link-active-dark'
-              : activeNav === '#about' ? 'nav-link-active-light'
-              : 'nav-link'}
-          >
-            About
-          </Link>
-          <Link
-            href="#skills"
-            px={2}
-            py={2}
-            onClick={ () => setActiveNav('#skills')}
-            variant={
-              activeNav === '#skills' && colorMode === 'dark' ? 'nav-link-active-dark'
-              : activeNav === '#skills' ? 'nav-link-active-light'
-              : 'nav-link'
-            }
-          >
-            Skills
-          </Link>
-          <Link 
-            href="#Projects" 
-            px={2} 
-            py={2}
-            onClick={ () => setActiveNav('#projects')}
-            variant={
-              activeNav === '#projects' && colorMode === 'dark' ? 'nav-link-active-dark'
-              : activeNav === '#projects' ? 'nav-link-active-light'
-              : 'nav-link'
-            }
-          >
-            Projects
-          </Link>
-          <Link 
-            href="#contact" 
-            px={2} 
-            py={2}
-            onClick={ () => setActiveNav('#contact')}
-            variant={
-              activeNav === '#contact' && colorMode === 'dark' ? 'nav-link-active-dark'
-              : activeNav === '#contact' ? 'nav-link-active-light'
-              : 'nav-link'
-            }
-          >
-            Contact
-          </Link>
-        </HStack>
+        </Box>
     </Box>
   );
 };

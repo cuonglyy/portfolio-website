@@ -11,6 +11,7 @@ const About = () => {
     <Container
       mt={16}
       maxW='container.md'
+      h='100vh'
     >
       <Heading size='md' textAlign='center'>Get to know</Heading>
       <Heading size='xl' textAlign='center'>About Me</Heading>

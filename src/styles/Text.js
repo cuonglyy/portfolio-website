@@ -1,6 +1,6 @@
-import { defaultStyleConfig } from '@chakra-ui/react'
+import { defineStyleConfig } from '@chakra-ui/react'
 
-const Text = defaultStyleConfig( {
+const Text = defineStyleConfig( {
   variants: {
     'header-spacing': {
       letterSpacing: '1px'

@@ -5,11 +5,9 @@ import {
   useColorMode,
   Button,
   HStack,
-  Menu,
-  MenuButton,
+  VStack,
   IconButton,
-  MenuItem,
-  MenuList,
+  Collapse,
   useColorModeValue,
 } from "@chakra-ui/react"
 import { WiDaySunny, WiMoonAltWaningGibbous2 } from 'react-icons/wi'
@@ -17,11 +15,18 @@ import { AiOutlineMenu } from 'react-icons/ai'
 
 
 const Navbar = () => {
+  /* Let's user change background color from light to dark and vice versa */
   const { colorMode, toggleColorMode } = useColorMode();
   const bgColor = useColorModeValue('white', 'gray.800')
+
+  /* For menu (mobile users) */
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
+
+  /* For Navbar (Desktop & Tablet users) */
   const [activeNav, setActiveNav] = useState('#');
+
+  /* Adds box shadow to the navbar once user scrolls down */
   const [scrollY, setScrollY] = useState(0);
   useEffect( () => {
     const onScroll = () => setScrollY(window.pageYOffset);
@@ -40,12 +45,8 @@ const Navbar = () => {
       boxShadow={scrollY === 0 ? 'none' : 'lg'}
       bg={bgColor}
     >
-      <HStack
-        gap={[2, 2, 32]}
-        align={['center', 'center', 'center']}
-        justify={['space-between', 'space-between', 'space-between']}
-      >
         <Button
+          position='absolute'
           onClick={toggleColorMode}
           border='1px solid'
           fontSize={['1.5em', '1.5em', '1.5em']}
@@ -53,65 +54,50 @@ const Navbar = () => {
           {colorMode === 'light' ? <WiDaySunny/> : <WiMoonAltWaningGibbous2/>}
         </Button>
 
-        /* ======= Displays for mobile users ======= */
-        <Menu>
-          <MenuButton
-            as={IconButton}
-            icon={<AiOutlineMenu/>}
-            display={{ base: 'block', sm: 'none', md: 'none'}}
-            onClick={toggle}
-            border='1px solid'
-            p={2.5}
-            borderRadius={4}
-          />
-          <MenuList>
-            <MenuItem>
-              <Link 
+        {/* Menu button that appears for collapse nav bar (small screen) */}
+        <IconButton
+          display={['block', 'none', 'none']}
+          position='absolute'
+          right={10}
+          icon={<AiOutlineMenu />}
+          onClick={toggle}
+          border='1px solid'
+          p={2.5}
+          borderRadius={4}
+        />
+        
+        {/* Menu displays for small screens (mobile devices) */}
+        <Box
+          mt={10}
+        >
+          <Collapse
+            in={isOpen}
+          >
+            <VStack
+              mt={5}
+              textAlign='center'
+              gap={2}
+            >
+              <Link
                 href="#"
                 width='100%'
-                onClick={ () => setActiveNav('#')}
               >
                 Home
               </Link>
-            </MenuItem>
-            <MenuItem>
-              <Link 
+              <Link
                 href="#about"
                 width='100%'
               >
                 About
               </Link>
-            </MenuItem>
-            <MenuItem>
-              <Link 
-                href="#skills"
-                width='100%'
-              >
-                Skills
-              </Link>
-            </MenuItem>
-            <MenuItem>
-              <Link
-                href="#projects"
-                width='100%'
-              >
-                Projects
-              </Link>
-            </MenuItem>
-            <MenuItem>
-              <Link 
-                href="#contact"
-                width='100%'
-              >
-                Contact
-              </Link>
-            </MenuItem>
-          </MenuList>
-        </Menu>
+            </VStack>
+          </Collapse>
+        </Box>
 
-        /* ======== Displays for desktop and tablet users ======== */
+        {/* Navbar appears for desktop & tablet users */}
         <HStack
           display={{ base: 'none', sm: 'flex', md: 'flex'}}
+          justifyContent='flex-end'
           gap={[0, 0, 9]}
           spacing={0}
         >
@@ -180,7 +166,6 @@ const Navbar = () => {
             Contact
           </Link>
         </HStack>
-      </HStack>
     </Box>
   );
 };

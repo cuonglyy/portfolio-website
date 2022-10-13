@@ -4,7 +4,7 @@ const MenuItem = defineStyleConfig( {
   variants: {
     'menu-item-active': {
       bg: {
-        color: 'gray.500',
+        color: 'gray.200',
       },
     },
   },

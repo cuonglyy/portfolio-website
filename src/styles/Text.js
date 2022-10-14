@@ -1,9 +1,13 @@
-import { defineStyleConfig } from '@chakra-ui/react'
+import { defineStyleConfig } from "@chakra-ui/react";
+import "@fontsource/montserrat"
 
 const Text = defineStyleConfig( {
+  baseStyle: {
+    letterSpacing: '0.2px',
+  },
   variants: {
-    'header-spacing': {
-      letterSpacing: '1px'
+    'montserrat-font': {
+      fontFamily: 'Montserrat, sans-serif'
     }
   }
 });

@@ -1,7 +1,7 @@
 import React from 'react'
 import NavBar from './components/Navbar.jsx'
-import About from './components/About.jsx'
-import Home from './components/Home/Home.jsx'
+import About from './components/About/About.jsx'
+import Skills from './components/Skills.jsx'
 import {
   Box,
   Divider 
@@ -13,9 +13,9 @@ function App() {
     <>
       <NavBar />
       <Box as='main' pt='6.5em'>
-        <Home />
-        <Divider />
         <About />
+        <Divider />
+        <Skills />
       </Box>
     </>
   )

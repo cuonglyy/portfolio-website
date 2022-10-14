@@ -1,8 +1,9 @@
 import { extendTheme } from '@chakra-ui/react'
+import "@fontsource/open-sans"
 import Link from './Link.js'
-import MenuItem from './MenuItem.js'
-import Text from './Text.js'
+import Heading from './Heading.js'
 import Divider from './Divider.js'
+import Text from './Text.js'
 
 const styles = {
   global: {
@@ -22,9 +23,9 @@ const config = {
 
 const components = {
   Link,
-  MenuItem,
+  Heading,
+  Divider,
   Text,
-  Divider
 }
 
 const overrides = {

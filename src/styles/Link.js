@@ -8,12 +8,18 @@ const Link = defineStyleConfig({
     letterSpacing: '1px'
   },
   variants: {
-    'nav-link': {
+    'nav-link-dark': {
       _hover: {
         color: 'white',
         textShadow: '0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff'
       },
     },
+    'nav-link-light': {
+      _hover: {
+        color: 'black',
+        textShadow: '0 0 9px #000'
+    },
+  },
     'nav-link-active-dark': {
       color: 'white',
       textShadow: '0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff',
@@ -22,9 +28,6 @@ const Link = defineStyleConfig({
       color: 'black',
       textShadow: '0 0 9px #000'
     },
-    'menu-link-active': {
-
-    }
   }
 });
 

@@ -12,12 +12,14 @@ import {
 import Typed from 'react-typed'
 import ME from '../../assets/pic.png'
 import CTA from './CTA.jsx'
+import Socials from './Socials.jsx'
 
-const Home = () => {
+const About = () => {
   return (
     <Container
-      p='5em 0'
+      p='80px 0'
       maxW={['container.md', 'container.sm', 'container.md']}
+      id='about'
     >
       <Grid
         templateColumns={['1.1fr', '1fr 1.2fr', '1fr 1.1fr']}
@@ -74,14 +76,29 @@ const Home = () => {
                 fontSize={['2xl' ,'2xl', '3xl']}
               />
             </Typed>
-            <CTA 
-              pt={[4, 6, 8]}
-            />
+            <CTA pt={[4, 6, 8]}/>
           </Flex>
         </GridItem>
       </Grid>
+      <Container
+        display='flex'
+        flexDir='column'
+        textAlign='center'
+        maxW={['container.sm', '2xl', '3xl']}
+        px={10}
+        mt={20}
+      >
+        <Text
+          fontSize='lg'
+          variant='montserrat-font'
+        >
+          I'm a self-disciplined and dynamic software engineer with a passion in developing efficient user-friendly web applications with organized backend services.
+        </Text>
+        <Socials/>
+      </Container>
     </Container>
+    
   );
 };
 
-export default Home;
+export default About;

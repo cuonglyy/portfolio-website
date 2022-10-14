@@ -38,7 +38,7 @@ const Navbar = () => {
   return (
     <Box
       as='nav'
-      p={["32px 32px","32px 40px"]}
+      p={["32px 36px","32px 54px"]}
       w="100%"
       pos='fixed'
       zIndex={1}
@@ -79,19 +79,6 @@ const Navbar = () => {
             spacing={0}
           >
             <Link 
-              href="#" 
-              px={2} 
-              py={2}
-              onClick={ () => setActiveNav('#')}
-              variant={ 
-                activeNav === '#' && colorMode === 'dark' ? 'nav-link-active-dark'
-                : activeNav === '#' ? 'nav-link-active-light'
-                : 'nav-link'
-              }
-            >
-              Home
-            </Link>
-            <Link 
               href="#about" 
               px={2} 
               py={2}
@@ -99,7 +86,9 @@ const Navbar = () => {
               variant={
                 activeNav === '#about' && colorMode === 'dark' ? 'nav-link-active-dark'
                 : activeNav === '#about' ? 'nav-link-active-light'
-                : 'nav-link'}
+                : colorMode === 'dark' ? 'nav-link-dark'
+                : 'nav-link-light'
+              }
             >
               About
             </Link>
@@ -111,7 +100,8 @@ const Navbar = () => {
               variant={
                 activeNav === '#skills' && colorMode === 'dark' ? 'nav-link-active-dark'
                 : activeNav === '#skills' ? 'nav-link-active-light'
-                : 'nav-link'
+                : colorMode === 'dark' ? 'nav-link-dark'
+                : 'nav-link-light'
               }
             >
               Skills
@@ -124,7 +114,8 @@ const Navbar = () => {
               variant={
                 activeNav === '#projects' && colorMode === 'dark' ? 'nav-link-active-dark'
                 : activeNav === '#projects' ? 'nav-link-active-light'
-                : 'nav-link'
+                : colorMode === 'dark' ? 'nav-link-dark'
+                : 'nav-link-light'
               }
             >
               Projects
@@ -137,7 +128,8 @@ const Navbar = () => {
               variant={
                 activeNav === '#contact' && colorMode === 'dark' ? 'nav-link-active-dark'
                 : activeNav === '#contact' ? 'nav-link-active-light'
-                : 'nav-link'
+                : colorMode === 'dark' ? 'nav-link-dark'
+                : 'nav-link-light'
               }
             >
               Contact
@@ -157,69 +149,61 @@ const Navbar = () => {
               textAlign='center'
             >
               <Link 
-                href="#" 
+                href="#about" 
                 px={2} 
                 py={2}
-                onClick={ () => setActiveNav('#')}
-                variant={ 
-                  activeNav === '#' && colorMode === 'dark' ? 'nav-link-active-dark'
-                  : activeNav === '#' ? 'nav-link-active-light'
-                  : 'nav-link'
+                onClick={ () => setActiveNav('#about')}
+                variant={
+                  activeNav === '#about' && colorMode === 'dark' ? 'nav-link-active-dark'
+                  : activeNav === '#about' ? 'nav-link-active-light'
+                  : colorMode === 'dark' ? 'nav-link-dark'
+                  : 'nav-link-light'
                 }
-                >
-                  Home
-                </Link>
-                <Link 
-                  href="#about" 
-                  px={2} 
-                  py={2}
-                  onClick={ () => setActiveNav('#about')}
-                  variant={
-                    activeNav === '#about' && colorMode === 'dark' ? 'nav-link-active-dark'
-                    : activeNav === '#about' ? 'nav-link-active-light'
-                    : 'nav-link'}
-                >
-                  About
-                </Link>
-                <Link
-                  href="#skills"
-                  px={2}
-                  py={2}
-                  onClick={ () => setActiveNav('#skills')}
-                  variant={
-                    activeNav === '#skills' && colorMode === 'dark' ? 'nav-link-active-dark'
-                    : activeNav === '#skills' ? 'nav-link-active-light'
-                    : 'nav-link'
-                  }
-                >
-                  Skills
-                </Link>
-                <Link 
-                  href="#Projects" 
-                  px={2} 
-                  py={2}
-                  onClick={ () => setActiveNav('#projects')}
-                  variant={
-                    activeNav === '#projects' && colorMode === 'dark' ? 'nav-link-active-dark'
-                    : activeNav === '#projects' ? 'nav-link-active-light'
-                    : 'nav-link'
-                  }
-                >
-                  Projects
-                </Link>
-                <Link 
-                  href="#contact" 
-                  px={2} 
-                  py={2}
-                  onClick={ () => setActiveNav('#contact')}
-                  variant={
-                    activeNav === '#contact' && colorMode === 'dark' ? 'nav-link-active-dark'
-                    : activeNav === '#contact' ? 'nav-link-active-light'
-                    : 'nav-link'
-                  }
-                >
-                  Contact
-                </Link>
+              >
+                About
+              </Link>
+              <Link
+                href="#skills"
+                px={2}
+                py={2}
+                onClick={ () => setActiveNav('#skills')}
+                variant={
+                  activeNav === '#skills' && colorMode === 'dark' ? 'nav-link-active-dark'
+                  : activeNav === '#skills' ? 'nav-link-active-light'
+                  : colorMode === 'dark' ? 'nav-link-dark'
+                  : 'nav-link-light'
+                }
+              >
+                Skills
+              </Link>
+              <Link 
+                href="#Projects" 
+                px={2} 
+                py={2}
+                onClick={ () => setActiveNav('#projects')}
+                variant={
+                  activeNav === '#projects' && colorMode === 'dark' ? 'nav-link-active-dark'
+                  : activeNav === '#projects' ? 'nav-link-active-light'
+                  : colorMode === 'dark' ? 'nav-link-dark'
+                  : 'nav-link-light'
+                }
+              >
+                Projects
+              </Link>
+              <Link 
+                href="#contact" 
+                px={2} 
+                py={2}
+                onClick={ () => setActiveNav('#contact')}
+                variant={
+                  activeNav === '#contact' && colorMode === 'dark' ? 'nav-link-active-dark'
+                  : activeNav === '#contact' ? 'nav-link-active-light'
+                  : colorMode === 'dark' ? 'nav-link-dark'
+                  : 'nav-link-light'
+                }
+              >
+                Contact
+              </Link>
             </VStack>
           </Collapse>
         </Box>

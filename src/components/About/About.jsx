@@ -92,7 +92,7 @@ const About = () => {
           fontSize='lg'
           variant='montserrat-font'
         >
-          I'm a self-disciplined and dynamic software engineer with a passion in developing efficient user-friendly web applications with organized backend services.
+          I'm a dynamic software engineer with a passion in developing efficient user-friendly web applications with organized backend services.
         </Text>
         <Socials/>
       </Container>

@@ -3,6 +3,7 @@ import NavBar from './components/Navbar.jsx'
 import About from './components/About/About.jsx'
 import Skills from './components/Skills.jsx'
 import Projects from './components/Projects.jsx'
+import Contact from './components/Contact.jsx'
 import {
   Box,
   Divider 
@@ -20,6 +21,7 @@ function App() {
         <Divider />
         <Projects />
         <Divider />
+        <Contact />
       </Box>
     </>
   )

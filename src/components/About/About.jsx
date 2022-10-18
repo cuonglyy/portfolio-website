@@ -17,7 +17,7 @@ import Socials from './Socials.jsx'
 const About = () => {
   return (
     <Container
-      p='80px 0'
+      pt='80px'
       maxW={['container.md', 'container.sm', 'container.md']}
       id='about'
     >

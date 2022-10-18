@@ -3,7 +3,7 @@ import { defineStyleConfig } from '@chakra-ui/react'
 const Divider = defineStyleConfig({
   baseStyle: {
     w: '85%',
-    m: '50px 0',
+    my: ['75px', '85px', '85px'],
     display: 'block'
   }
 

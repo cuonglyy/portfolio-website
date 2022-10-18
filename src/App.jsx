@@ -2,6 +2,7 @@ import React from 'react'
 import NavBar from './components/Navbar.jsx'
 import About from './components/About/About.jsx'
 import Skills from './components/Skills.jsx'
+import Projects from './components/Projects.jsx'
 import {
   Box,
   Divider 
@@ -16,6 +17,9 @@ function App() {
         <About />
         <Divider />
         <Skills />
+        <Divider />
+        <Projects />
+        <Divider />
       </Box>
     </>
   )

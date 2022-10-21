@@ -24,6 +24,7 @@ const Skills = () => {
     <Container
       id='skills'
       px={[25, 35, 35]}
+      h='50vh'
       maxW={['325px', 'container.md', 'container.lg']}
     >
       <Heading

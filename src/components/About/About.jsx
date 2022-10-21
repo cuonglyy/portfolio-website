@@ -93,6 +93,7 @@ const About = () => {
           variant='montserrat-font'
         >
           I'm a dynamic software engineer with a passion in developing efficient user-friendly web applications with organized backend services.
+          I'm currently residing in San Jose, CA.
         </Text>
         <Socials/>
       </Container>

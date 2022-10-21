@@ -107,7 +107,7 @@ const Navbar = () => {
               Skills
             </Link>
             <Link 
-              href="#Projects" 
+              href="#projects" 
               px={2} 
               py={2}
               onClick={ () => setActiveNav('#projects')}

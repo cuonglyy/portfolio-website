@@ -6,12 +6,13 @@ import {
   Grid,
   GridItem,
   Box,
-  TextArea,
+  Textarea,
   FormControl,
   FormLabel,
   FormErrorMessage,
   Button,
-  Input
+  Input,
+  Stack,
 } from '@chakra-ui/react'
 import emailjs from '@emailjs/browser'
 
@@ -34,8 +35,8 @@ const Contact = () => {
   return (
     <Container
       id='contact'
-      h='50vh'
       maxW={['container.sm', 'container.lg', 'container.lg']}
+      mb={[50, 52, 52]}
     >
       <Heading
         size={['xl', 'lg', 'lg']}
@@ -45,19 +46,25 @@ const Contact = () => {
         Contact
       </Heading>
       <Grid
-        templateColumns={['1fr', '2fr 1fr', '2fr 1fr']}
-        border='1px solid'
+        templateColumns={['1fr', '2.5fr 1fr', '2.5fr 1fr']}
       >
         <form>
           <Grid
-            templateRows='1fr 1fr 1fr 2fr 1fr'
-            border='1px solid blue'
+            templateRows='1fr 1fr 1fr 1fr 4fr 1fr'
+            w='95%'
+            gap={4}
           >
+            <GridItem>
+              <Text variant='montserrat-font'>
+                Please don't hesitate and feel free to contact me! I'm open to offers or any questions you have.
+              </Text>
+            </GridItem>
             <GridItem>
               <FormControl>
                 <FormLabel>Your Name</FormLabel>
                 <Input
                   variant='outline'
+                  w='55%'
                 />
               </FormControl>
             </GridItem>
@@ -66,6 +73,7 @@ const Contact = () => {
                 <FormLabel>Your Email</FormLabel>
                 <Input
                   variant='outline'
+                  w='55%'
                 />
               </FormControl>
             </GridItem>
@@ -74,12 +82,18 @@ const Contact = () => {
                 <FormLabel>Subject</FormLabel>
                 <Input
                   variant='outline'
+                  w='55%'
                 />
               </FormControl>
             </GridItem>
             <GridItem>
               <FormControl>
                 <FormLabel>Message</FormLabel>
+                <Textarea
+                  resize='none'
+                  w='80%'
+                  h={300}
+                />
               </FormControl>
             </GridItem>
             <GridItem>
@@ -89,9 +103,16 @@ const Contact = () => {
             </GridItem>
           </Grid>
         </form>
-        <GridItem>
-          Contact Info
-        </GridItem>
+        <Stack spacing={12}>
+          <Box>
+            <Heading size='sm'>Email</Heading>
+            <Text>cuonglyy@gmail.com</Text>
+          </Box>
+          <Box>
+            <Heading size='sm'>Phone</Heading>
+            <Text>+1 (408) 892-7750</Text>
+          </Box>
+        </Stack>
       </Grid>
 
     </Container>

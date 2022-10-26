@@ -24,7 +24,6 @@ const Skills = () => {
     <Container
       id='skills'
       px={[25, 35, 35]}
-      h='50vh'
       maxW={['325px', 'container.md', 'container.lg']}
     >
       <Heading
@@ -35,7 +34,7 @@ const Skills = () => {
         Skills
       </Heading>
       <Grid
-        gridTemplateColumns={['1fr', '1fr 1fr', '1fr 1fr 1fr']}
+        templateColumns={['1fr', '1fr 1fr', '1fr 1fr 1fr']}
         gap={[6, 10, 16]}
         textAlign='center'
       >
@@ -117,7 +116,7 @@ const Skills = () => {
               borderBottom='1px solid'
             >
               <Heading fontSize='24px'>
-                Others
+                Tools & Technologies
               </Heading>
             </Box>
             <List spacing={4}>

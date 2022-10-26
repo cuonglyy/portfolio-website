@@ -21,22 +21,30 @@ import emailjs from '@emailjs/browser'
 const Contact = () => {
   const form = useRef();
 
+  console.log(form)
+  
   const sendEmail = (e) => {
     e.preventDefault();
-
+    
+    /*
     emailjs.sendForm(
       process.env.REACT_APP_EMAIL_PUBLIC_KEY,
       process.env.REACT_APP_EMAIL_TEMPLATE_ID,
       form.current,
       process.env.REACT_APP_EMAIL_PUBLIC_KEY
     )
+    */
+
+    e.target.reset();
   };
+
 
   return (
     <Container
       id='contact'
       maxW={['container.sm', 'container.lg', 'container.lg']}
       mb={[50, 52, 52]}
+      px={[25, 35, 35]}
     >
       <Heading
         size={['xl', 'lg', 'lg']}
@@ -48,7 +56,7 @@ const Contact = () => {
       <Grid
         templateColumns={['1fr', '2.5fr 1fr', '2.5fr 1fr']}
       >
-        <form>
+        <form ref={form} onSubmit={sendEmail}>
           <Grid
             templateRows='1fr 1fr 1fr 1fr 4fr 1fr'
             w='95%'
@@ -56,31 +64,38 @@ const Contact = () => {
           >
             <GridItem>
               <Text variant='montserrat-font'>
-                Please don't hesitate and feel free to contact me! I'm open to offers or any questions you have.
+                Please don't hesitate and feel free to contact me!
+                I'm open to offers or any questions you have.
               </Text>
             </GridItem>
             <GridItem>
-              <FormControl>
+              <FormControl isRequired>
                 <FormLabel>Your Name</FormLabel>
                 <Input
+                  type='text'
+                  placeholder='Your Name'
                   variant='outline'
                   w='55%'
                 />
               </FormControl>
             </GridItem>
             <GridItem>
-              <FormControl>
+              <FormControl isRequired>
                 <FormLabel>Your Email</FormLabel>
                 <Input
+                  type='email'
+                  placeholder='Your Email'
                   variant='outline'
                   w='55%'
                 />
               </FormControl>
             </GridItem>
             <GridItem>
-              <FormControl>
+              <FormControl isRequired>
                 <FormLabel>Subject</FormLabel>
                 <Input
+                  type='text'
+                  placeholder='Subject'
                   variant='outline'
                   w='55%'
                 />
@@ -97,8 +112,10 @@ const Contact = () => {
               </FormControl>
             </GridItem>
             <GridItem>
-              <Button>
-                Submit
+              <Button
+                colorScheme='blue'
+              >
+                Send
               </Button>
             </GridItem>
           </Grid>
@@ -106,11 +123,11 @@ const Contact = () => {
         <Stack spacing={12}>
           <Box>
             <Heading size='sm'>Email</Heading>
-            <Text>cuonglyy@gmail.com</Text>
+            <Text variant='montserrat-font'>cuonglyy@gmail.com</Text>
           </Box>
           <Box>
             <Heading size='sm'>Phone</Heading>
-            <Text>+1 (408) 892-7750</Text>
+            <Text variant='montserrat-font'>+1 (408) 892-7750</Text>
           </Box>
         </Stack>
       </Grid>

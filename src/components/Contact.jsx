@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import {
   Container,
   Heading,
@@ -13,6 +13,7 @@ import {
   Button,
   Input,
   Stack,
+  HStack,
 } from '@chakra-ui/react'
 import emailjs from '@emailjs/browser'
 
@@ -20,18 +21,21 @@ import emailjs from '@emailjs/browser'
 
 const Contact = () => {
   const form = useRef();
+  const [formSent, setFormSent] = useState(false)
   
   const sendEmail = (e) => {
     e.preventDefault();
     
-    /*
     emailjs.sendForm(
-      process.env.REACT_APP_EMAIL_PUBLIC_KEY,
+      process.env.REACT_APP_EMAIL_SERVICE_ID,
       process.env.REACT_APP_EMAIL_TEMPLATE_ID,
       form.current,
       process.env.REACT_APP_EMAIL_PUBLIC_KEY
-    )
-    */
+    ).then(function(response) {
+       console.log('SUCCESS!', response.status, response.text);
+    }, function(error) {
+       console.log('FAILED...', error);
+    });
 
     e.target.reset();
   };
@@ -61,6 +65,7 @@ const Contact = () => {
             w='98%'
             gap={4}
             borderRight={['none', '1px solid', '1px solid']}
+            justifyContent='center'
           >
             <GridItem>
               <Text variant='montserrat-font'>
@@ -73,6 +78,7 @@ const Contact = () => {
                 <FormLabel>Your Name</FormLabel>
                 <Input
                   type='text'
+                  name='name'
                   placeholder='Your Name'
                   variant='outline'
                   w='55%'
@@ -84,6 +90,7 @@ const Contact = () => {
                 <FormLabel>Your Email</FormLabel>
                 <Input
                   type='email'
+                  name='email'
                   placeholder='Your Email'
                   variant='outline'
                   w='55%'
@@ -95,6 +102,7 @@ const Contact = () => {
                 <FormLabel>Subject</FormLabel>
                 <Input
                   type='text'
+                  name='subject'
                   placeholder='Subject'
                   variant='outline'
                   w='55%'
@@ -105,6 +113,7 @@ const Contact = () => {
               <FormControl>
                 <FormLabel>Message</FormLabel>
                 <Textarea
+                  name='message'
                   resize='none'
                   w='80%'
                   h={300}
@@ -112,11 +121,19 @@ const Contact = () => {
               </FormControl>
             </GridItem>
             <GridItem>
-              <Button
-                colorScheme='blue'
-              >
-                Send
-              </Button>
+              <HStack>
+                <Button
+                  
+                  loadingText='Sending'
+                  colorScheme='blue'
+                  type='submit'
+                >
+                  Send
+                </Button>
+                <Text>
+
+                </Text>
+              </HStack>
             </GridItem>
           </Grid>
         </form>

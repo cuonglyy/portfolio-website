@@ -20,8 +20,6 @@ import emailjs from '@emailjs/browser'
 
 const Contact = () => {
   const form = useRef();
-
-  console.log(form)
   
   const sendEmail = (e) => {
     e.preventDefault();
@@ -42,8 +40,9 @@ const Contact = () => {
   return (
     <Container
       id='contact'
+      scrollMarginTop={[185, 190, 190]}
       maxW={['container.sm', 'container.lg', 'container.lg']}
-      mb={[50, 52, 52]}
+      my={[75, 85, 85]}
       px={[25, 35, 35]}
     >
       <Heading
@@ -59,8 +58,9 @@ const Contact = () => {
         <form ref={form} onSubmit={sendEmail}>
           <Grid
             templateRows='1fr 1fr 1fr 1fr 4fr 1fr'
-            w='95%'
+            w='98%'
             gap={4}
+            borderRight={['none', '1px solid', '1px solid']}
           >
             <GridItem>
               <Text variant='montserrat-font'>

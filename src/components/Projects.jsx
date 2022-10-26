@@ -10,7 +10,9 @@ const Projects = () => {
   return (
     <Container
       id='projects'
+      scrollMarginTop={[185, 190, 190]}
       h='50vh'
+      my={[75, 85, 85]}
     >
       <Heading
         size={['xl', 'lg', 'lg']}

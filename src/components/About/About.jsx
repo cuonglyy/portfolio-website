@@ -17,9 +17,11 @@ import Socials from './Socials.jsx'
 const About = () => {
   return (
     <Container
+      id='about'
+      scrollMarginTop={105}
       pt='80px'
       maxW={['container.md', 'container.sm', 'container.md']}
-      id='about'
+      mb={[75, 85, 85]}
     >
       <Grid
         templateColumns={['1.1fr', '1fr 1.2fr', '1fr 1.1fr']}

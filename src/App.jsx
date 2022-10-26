@@ -16,7 +16,7 @@ function App() {
       <NavBar />
       <Box as='main' pt='6.5em'>
         <About />
-        <Divider />
+        <Divider/>
         <Skills />
         <Divider />
         <Projects />

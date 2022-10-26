@@ -23,6 +23,8 @@ const Skills = () => {
   return (
     <Container
       id='skills'
+      scrollMarginTop={[185, 190, 190]}
+      my={[75, 85, 85]}
       px={[25, 35, 35]}
       maxW={['325px', 'container.md', 'container.lg']}
     >

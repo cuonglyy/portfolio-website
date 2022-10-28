@@ -1,4 +1,5 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
+import { useForm } from 'react-hook-form'
 import {
   Container,
   Heading,
@@ -21,8 +22,12 @@ import emailjs from '@emailjs/browser'
 
 const Contact = () => {
   const form = useRef();
-  const [formSent, setFormSent] = useState(false)
-  
+  const {
+    register,
+    formState: {isSubmitting, isSubmitSuccessful}
+  } = useForm();
+
+
   const sendEmail = (e) => {
     e.preventDefault();
     
@@ -62,8 +67,9 @@ const Contact = () => {
         <form ref={form} onSubmit={sendEmail}>
           <Grid
             templateRows='1fr 1fr 1fr 1fr 4fr 1fr'
-            w='98%'
             gap={4}
+            w='97%'
+            pr={4}
             borderRight={['none', '1px solid', '1px solid']}
             justifyContent='center'
           >
@@ -78,10 +84,12 @@ const Contact = () => {
                 <FormLabel>Your Name</FormLabel>
                 <Input
                   type='text'
-                  name='name'
                   placeholder='Your Name'
                   variant='outline'
                   w='55%'
+                  {...register('name', {
+                    required: true
+                  })}
                 />
               </FormControl>
             </GridItem>
@@ -90,10 +98,12 @@ const Contact = () => {
                 <FormLabel>Your Email</FormLabel>
                 <Input
                   type='email'
-                  name='email'
                   placeholder='Your Email'
                   variant='outline'
                   w='55%'
+                  {...register('email', {
+                    required: true
+                  })}
                 />
               </FormControl>
             </GridItem>
@@ -102,28 +112,32 @@ const Contact = () => {
                 <FormLabel>Subject</FormLabel>
                 <Input
                   type='text'
-                  name='subject'
                   placeholder='Subject'
                   variant='outline'
                   w='55%'
+                  {...register('subject', {
+                    required: true
+                  })}
                 />
               </FormControl>
             </GridItem>
             <GridItem>
-              <FormControl>
+              <FormControl isRequired>
                 <FormLabel>Message</FormLabel>
                 <Textarea
-                  name='message'
                   resize='none'
                   w='80%'
                   h={300}
+                  {...register('message', {
+                    required: true
+                  })}
                 />
               </FormControl>
             </GridItem>
             <GridItem>
               <HStack>
                 <Button
-                  
+                  isLoading={isSubmitting}
                   loadingText='Sending'
                   colorScheme='blue'
                   type='submit'

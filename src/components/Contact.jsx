@@ -10,7 +10,6 @@ import {
   Textarea,
   FormControl,
   FormLabel,
-  FormErrorMessage,
   Button,
   Input,
   Stack,
@@ -24,25 +23,24 @@ const Contact = () => {
   const form = useRef();
   const {
     register,
-    formState: {isSubmitting, isSubmitSuccessful}
+    handleSubmit,
+    formState: {isSubmitting}
   } = useForm();
 
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-    
-    emailjs.sendForm(
-      process.env.REACT_APP_EMAIL_SERVICE_ID,
-      process.env.REACT_APP_EMAIL_TEMPLATE_ID,
-      form.current,
-      process.env.REACT_APP_EMAIL_PUBLIC_KEY
-    ).then(function(response) {
-       console.log('SUCCESS!', response.status, response.text);
-    }, function(error) {
-       console.log('FAILED...', error);
-    });
-
-    e.target.reset();
+  const sendEmail = () => {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve(
+          emailjs.sendForm(
+            process.env.REACT_APP_EMAIL_SERVICE_ID,
+            process.env.REACT_APP_EMAIL_TEMPLATE_ID,
+            form.current,
+            process.env.REACT_APP_EMAIL_PUBLIC_KEY
+          )
+        );
+      }, 1000);
+    })
   };
 
 
@@ -64,7 +62,7 @@ const Contact = () => {
       <Grid
         templateColumns={['1fr', '2.5fr 1fr', '2.5fr 1fr']}
       >
-        <form ref={form} onSubmit={sendEmail}>
+        <form ref={form} onSubmit={handleSubmit(sendEmail)}>
           <Grid
             templateRows='1fr 1fr 1fr 1fr 4fr 1fr'
             gap={4}
@@ -81,8 +79,9 @@ const Contact = () => {
             </GridItem>
             <GridItem>
               <FormControl isRequired>
-                <FormLabel>Your Name</FormLabel>
+                <FormLabel htmlFor='name'>Your Name</FormLabel>
                 <Input
+                  id='name'
                   type='text'
                   placeholder='Your Name'
                   variant='outline'
@@ -95,8 +94,9 @@ const Contact = () => {
             </GridItem>
             <GridItem>
               <FormControl isRequired>
-                <FormLabel>Your Email</FormLabel>
+                <FormLabel htmlFor='email'>Your Email</FormLabel>
                 <Input
+                  id='email'
                   type='email'
                   placeholder='Your Email'
                   variant='outline'
@@ -109,8 +109,9 @@ const Contact = () => {
             </GridItem>
             <GridItem>
               <FormControl isRequired>
-                <FormLabel>Subject</FormLabel>
+                <FormLabel htmlFor='subject'>Subject</FormLabel>
                 <Input
+                  id='subject'
                   type='text'
                   placeholder='Subject'
                   variant='outline'
@@ -123,8 +124,9 @@ const Contact = () => {
             </GridItem>
             <GridItem>
               <FormControl isRequired>
-                <FormLabel>Message</FormLabel>
+                <FormLabel htmlFor='message'>Message</FormLabel>
                 <Textarea
+                  id='message'
                   resize='none'
                   w='80%'
                   h={300}
@@ -144,9 +146,6 @@ const Contact = () => {
                 >
                   Send
                 </Button>
-                <Text>
-
-                </Text>
               </HStack>
             </GridItem>
           </Grid>

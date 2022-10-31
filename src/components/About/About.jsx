@@ -63,7 +63,7 @@ const About = () => {
               </Heading>
             <Typed
               strings={[
-                "Full-Stack Developer.",
+                "Front-End Developer.",
                 "Software Engineer.",
                 "Badminton Player.",
                 "Cat and Dog Lover.",

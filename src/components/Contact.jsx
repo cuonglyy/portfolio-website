@@ -151,11 +151,11 @@ const Contact = () => {
           </Grid>
         </form>
         <Stack spacing={12}>
-          <Box>
+          <Box textAlign={['center', 'left', 'left']}>
             <Heading size='sm'>Email</Heading>
             <Text variant='montserrat-font'>cuonglyy@gmail.com</Text>
           </Box>
-          <Box>
+          <Box textAlign={['center', 'left', 'left']}>
             <Heading size='sm'>Phone</Heading>
             <Text variant='montserrat-font'>+1 (408) 892-7750</Text>
           </Box>

@@ -1,23 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   Link,
   Box,
-  useColorMode,
-  Button,
   HStack,
   VStack,
   IconButton,
   Collapse,
-  useColorModeValue,
 } from "@chakra-ui/react";
-import { WiDaySunny, WiMoonAltWaningGibbous2 } from "react-icons/wi";
 import { AiOutlineMenu } from "react-icons/ai";
 
 const Navbar = () => {
-  /* Let's user change background color from light to dark and vice versa */
-  const { colorMode, toggleColorMode } = useColorMode();
-  const bgColor = useColorModeValue("white", "gray.800");
-
   /* For menu (mobile users) */
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
@@ -26,19 +18,8 @@ const Navbar = () => {
   const [activeNav, setActiveNav] = useState("#");
 
   return (
-    <Box
-      as="nav"
-      p={["32px 36px", "32px 54px"]}
-      w="100%"
-    >
-      <Button
-        position="absolute"
-        onClick={toggleColorMode}
-        border="1px solid"
-        fontSize={["1.5em", "1.5em", "1.5em"]}
-      >
-        {colorMode === "light" ? <WiDaySunny /> : <WiMoonAltWaningGibbous2 />}
-      </Button>
+    <Box as="nav" py={["36px", "54px"]} mx={[8, 10, 41.25]} w="100%">
+      {/* Add logo here*/}
 
       {/* Menu button that appears for collapse nav bar (small screen) */}
       <IconButton
@@ -65,6 +46,7 @@ const Navbar = () => {
             px={2}
             py={2}
             onClick={() => setActiveNav("#home")}
+            /*
             variant={
               activeNav === "#about" && colorMode === "dark"
                 ? "nav-link-active-dark"
@@ -74,6 +56,7 @@ const Navbar = () => {
                 ? "nav-link-dark"
                 : "nav-link-light"
             }
+            */
           >
             Home
           </Link>
@@ -82,6 +65,7 @@ const Navbar = () => {
             px={2}
             py={2}
             onClick={() => setActiveNav("#projects")}
+            /*
             variant={
               activeNav === "#projects" && colorMode === "dark"
                 ? "nav-link-active-dark"
@@ -91,6 +75,7 @@ const Navbar = () => {
                 ? "nav-link-dark"
                 : "nav-link-light"
             }
+            */
           >
             Portfolio
           </Link>
@@ -99,6 +84,7 @@ const Navbar = () => {
             px={2}
             py={2}
             onClick={() => setActiveNav("#contact")}
+            /*
             variant={
               activeNav === "#contact" && colorMode === "dark"
                 ? "nav-link-active-dark"
@@ -108,6 +94,7 @@ const Navbar = () => {
                 ? "nav-link-dark"
                 : "nav-link-light"
             }
+            */
           >
             Contact
           </Link>
@@ -122,6 +109,7 @@ const Navbar = () => {
                 px={2}
                 py={2}
                 onClick={() => setActiveNav("#about")}
+                /*
                 variant={
                   activeNav === "#about" && colorMode === "dark"
                     ? "nav-link-active-dark"
@@ -131,31 +119,16 @@ const Navbar = () => {
                     ? "nav-link-dark"
                     : "nav-link-light"
                 }
+                */
               >
-                About
-              </Link>
-              <Link
-                href="#skills"
-                px={2}
-                py={2}
-                onClick={() => setActiveNav("#skills")}
-                variant={
-                  activeNav === "#skills" && colorMode === "dark"
-                    ? "nav-link-active-dark"
-                    : activeNav === "#skills"
-                    ? "nav-link-active-light"
-                    : colorMode === "dark"
-                    ? "nav-link-dark"
-                    : "nav-link-light"
-                }
-              >
-                Skills
+                Home
               </Link>
               <Link
                 href="#projects"
                 px={2}
                 py={2}
                 onClick={() => setActiveNav("#projects")}
+                /*
                 variant={
                   activeNav === "#projects" && colorMode === "dark"
                     ? "nav-link-active-dark"
@@ -165,14 +138,16 @@ const Navbar = () => {
                     ? "nav-link-dark"
                     : "nav-link-light"
                 }
+                */
               >
-                Projects
+                Portfolio
               </Link>
               <Link
                 href="#contact"
                 px={2}
                 py={2}
                 onClick={() => setActiveNav("#contact")}
+                /*
                 variant={
                   activeNav === "#contact" && colorMode === "dark"
                     ? "nav-link-active-dark"
@@ -182,8 +157,9 @@ const Navbar = () => {
                     ? "nav-link-dark"
                     : "nav-link-light"
                 }
+                */
               >
-                Contact
+                Contact Me
               </Link>
             </VStack>
           </Collapse>

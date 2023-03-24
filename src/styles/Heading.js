@@ -1,11 +1,10 @@
-import { defineStyleConfig } from '@chakra-ui/react'
+import { defineStyleConfig } from "@chakra-ui/react";
 
-const Heading = defineStyleConfig( {
-  variants: {
-    'header-spacing': {
-      letterSpacing: '1px',
-    },
-  }
+/*
+  Might not need, remove if not needed
+*/
+const Heading = defineStyleConfig({
+  variants: {},
 });
 
-export default Heading
+export default Heading;

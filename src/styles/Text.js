@@ -1,15 +1,13 @@
 import { defineStyleConfig } from "@chakra-ui/react";
-import "@fontsource/montserrat"
 
-const Text = defineStyleConfig( {
+/*
+  Might not need, remove if not needed
+*/
+const Text = defineStyleConfig({
   baseStyle: {
-    letterSpacing: '0.2px',
+    letterSpacing: "0.2px",
   },
-  variants: {
-    'montserrat-font': {
-      fontFamily: 'Montserrat, sans-serif'
-    }
-  }
+  variants: {},
 });
 
-export default Text
+export default Text;

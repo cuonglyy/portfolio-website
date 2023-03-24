@@ -25,23 +25,11 @@ const Navbar = () => {
   /* For Navbar (Desktop & Tablet users) */
   const [activeNav, setActiveNav] = useState("#");
 
-  /* Adds box shadow to the navbar once user scrolls down */
-  const [scrollY, setScrollY] = useState(0);
-  useEffect(() => {
-    const onScroll = () => setScrollY(window.pageYOffset);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
     <Box
       as="nav"
       p={["32px 36px", "32px 54px"]}
       w="100%"
-      pos="fixed"
-      zIndex={1}
-      boxShadow={scrollY === 0 && isOpen ? "lg" : scrollY !== 0 ? "lg" : "none"}
-      bg={bgColor}
     >
       <Button
         position="absolute"
@@ -76,7 +64,7 @@ const Navbar = () => {
             href="#about"
             px={2}
             py={2}
-            onClick={() => setActiveNav("#about")}
+            onClick={() => setActiveNav("#home")}
             variant={
               activeNav === "#about" && colorMode === "dark"
                 ? "nav-link-active-dark"
@@ -87,24 +75,7 @@ const Navbar = () => {
                 : "nav-link-light"
             }
           >
-            About
-          </Link>
-          <Link
-            href="#skills"
-            px={2}
-            py={2}
-            onClick={() => setActiveNav("#skills")}
-            variant={
-              activeNav === "#skills" && colorMode === "dark"
-                ? "nav-link-active-dark"
-                : activeNav === "#skills"
-                ? "nav-link-active-light"
-                : colorMode === "dark"
-                ? "nav-link-dark"
-                : "nav-link-light"
-            }
-          >
-            Skills
+            Home
           </Link>
           <Link
             href="#projects"
@@ -121,7 +92,7 @@ const Navbar = () => {
                 : "nav-link-light"
             }
           >
-            Projects
+            Portfolio
           </Link>
           <Link
             href="#contact"

@@ -1,24 +1,19 @@
 import React from "react";
-import NavBar from "./components/Navbar.jsx";
-import About from "./components/About/About.jsx";
-import Skills from "./components/Skills.jsx";
-import Projects from "./components/Projects.jsx";
-import Contact from "./components/Contact.jsx";
-import { Box, Divider } from "@chakra-ui/react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Portfolio from "./pages/Portfolio";
+import ContactMe from "./pages/ContactMe";
 
 function App() {
   return (
     <>
-      <NavBar />
-      <Box as="main" pt="6.5em">
-        <About />
-        <Divider />
-        <Skills />
-        <Divider />
-        <Projects />
-        <Divider />
-        <Contact />
-      </Box>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/portfolio" element={<Portfolio /> } />
+          <Route path="/contactme" element={<ContactMe />} />
+        </Routes>
+      </Router>
     </>
   );
 }

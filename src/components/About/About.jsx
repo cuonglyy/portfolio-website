@@ -52,7 +52,7 @@ const About = () => {
             gap={[2, 1, 2]}
             alignItems={["center", "flex-start", "flex-start"]}
           >
-            <Heading size={["xl", "xl", "xl"]}>Hello, I'm Cuong.</Heading>
+            <Heading as='h1' size={["xl", "xl", "xl"]}>Hello, I'm Cuong.</Heading>
             <Typed
               strings={[
                 "Front-End Developer.",

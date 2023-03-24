@@ -17,6 +17,7 @@ import { ImNpm } from "react-icons/im";
 
 const Skills = () => {
   return (
+    /*
     <Container
       id="skills"
       scrollMarginTop={[185, 190, 190]}
@@ -24,6 +25,8 @@ const Skills = () => {
       px={[25, 35, 35]}
       maxW={["325px", "container.md", "container.lg"]}
     >
+    */
+    <>
       <Heading size={["xl", "lg", "lg"]} textAlign="center" mb={10}>
         Skills
       </Heading>
@@ -104,7 +107,10 @@ const Skills = () => {
           </Box>
         </GridItem>
       </Grid>
+    </>
+    /*
     </Container>
+    */
   );
 };
 

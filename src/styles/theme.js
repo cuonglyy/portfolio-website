@@ -1,5 +1,4 @@
 import { extendTheme } from '@chakra-ui/react'
-import "@fontsource/open-sans"
 import Link from './Link.js'
 import Heading from './Heading.js'
 import Divider from './Divider.js'
@@ -8,17 +7,14 @@ import Text from './Text.js'
 const styles = {
   global: {
     body: {
-      fontFamily: `'Open Sans', sans-serif`,
+      fontSize: "1.6rem",
+      fontFamily: `'Public Sans', sans-serif`,
     },
     html: {
-      scrollBehavior: "smooth"
+      scrollBehavior: "smooth",
+      fontSize: "62.5%",
     }
   },
-}
-
-const config = {
-  initialColorMode: 'light',
-  useSystemColorMode: false
 }
 
 const components = {
@@ -30,7 +26,6 @@ const components = {
 
 const overrides = {
   styles,
-  config,
   components
 }
 

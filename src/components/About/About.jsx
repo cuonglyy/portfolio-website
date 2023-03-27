@@ -18,10 +18,7 @@ const About = () => {
   return (
     <Container
       id="about"
-      scrollMarginTop={105}
-      pt="80px"
       maxW={["container.md", "container.sm", "container.md"]}
-      mb={[75, 85, 85]}
     >
       <Grid
         templateColumns={["1.1fr", "1fr 1.2fr", "1fr 1.1fr"]}
@@ -68,6 +65,7 @@ const About = () => {
                 as="span"
                 fontWeight="bold"
                 fontSize={["2xl", "2xl", "3xl"]}
+                
               />
             </Typed>
             <CTA pt={[4, 6, 8]} />
@@ -82,7 +80,7 @@ const About = () => {
         px={10}
         mt={20}
       >
-        <Text fontSize="lg" variant="montserrat-font">
+        <Text variant="montserrat-font">
           I'm a dynamic software engineer with a passion in developing efficient
           user-friendly web applications. I'm currently residing in San Jose,
           CA.

@@ -18,7 +18,7 @@ const Navbar = () => {
   const [activeNav, setActiveNav] = useState("#");
 
   return (
-    <Box as="nav" py={["36px", "54px"]} mx={[8, 10, 41.25]} w="100%">
+    <Box as="nav" py={["36px", "54px"]} mx={[8, 10, 41.25]}>
       {/* Add logo here*/}
 
       {/* Menu button that appears for collapse nav bar (small screen) */}

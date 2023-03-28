@@ -13,7 +13,7 @@ const styles = {
     html: {
       scrollBehavior: "smooth",
       fontSize: "62.5%",
-    }
+    },
   },
 }
 

@@ -18,34 +18,51 @@ const Navbar = () => {
   const [activeNav, setActiveNav] = useState("#");
 
   return (
-    <Box as="nav" py={["36px", "54px"]} mx={[8, 10, 41.25]}>
-      {/* Add logo here*/}
+    <Box
+      display="flex"
+      flexDirection={["column", "row", "row"]}
+      as="nav"
+      py={["3.2rem", "6.4rem", "6.4rem"]}
+      mx={["3.2rem", "4rem", "16.5rem"]}
+      backgroundColor="white"
+    >
+      {/* 
+        This section is wrapped in box tag for display flex
+        This allows the collapsed menu to display below for mobile devices
+      */}
+      <Box
+        display="flex"
+        justifyContent="space-between"
+        alignItems="center"
+        w="100%"
+      >
+        <Link id="logo" fontSize="3.2rem" fontFamily={`'Ibarra Real Nova', sans-serif`}>
+          lyqc.
+        </Link>
+        {/* Menu button that appears for collapse nav bar (small screen) */}
+        <IconButton
+          display={["flex", "none", "none"]}
+          icon={<AiOutlineMenu />}
+          onClick={toggle}
+          justifyContent="center"
+          alignItems="center"
+          ml="auto"
+          backgroundColor="transparent"
+          _hover="none"
+          fontSize="1.3rem"
+        />
 
-      {/* Menu button that appears for collapse nav bar (small screen) */}
-      <IconButton
-        display={["block", "none", "none"]}
-        position="absolute"
-        right={10}
-        icon={<AiOutlineMenu />}
-        onClick={toggle}
-        border="1px solid"
-        p={2.5}
-        borderRadius={4}
-      />
-
-      {/* Navbar appears for desktop & tablet users */}
-      <Box>
+        {/* Navbar appears for desktop & tablet users */}
         <HStack
-          display={{ base: "none", sm: "flex", md: "flex" }}
-          justifyContent="flex-end"
-          gap={[0, 0, 9]}
-          spacing={0}
+          display={["none", "flex", "flex"]}
+          spacing="3rem"
+          fontSize="1.2rem"
         >
           <Link
-            href="#about"
             px={2}
             py={2}
-            onClick={() => setActiveNav("#home")}
+            onClick={() => setActiveNav()}
+            textTransform="uppercase"
             /*
             variant={
               activeNav === "#about" && colorMode === "dark"
@@ -61,10 +78,10 @@ const Navbar = () => {
             Home
           </Link>
           <Link
-            href="#projects"
             px={2}
             py={2}
-            onClick={() => setActiveNav("#projects")}
+            onClick={() => setActiveNav()}
+            textTransform="uppercase"
             /*
             variant={
               activeNav === "#projects" && colorMode === "dark"
@@ -80,10 +97,10 @@ const Navbar = () => {
             Portfolio
           </Link>
           <Link
-            href="#contact"
             px={2}
             py={2}
-            onClick={() => setActiveNav("#contact")}
+            onClick={() => setActiveNav()}
+            textTransform="uppercase"
             /*
             variant={
               activeNav === "#contact" && colorMode === "dark"
@@ -99,17 +116,17 @@ const Navbar = () => {
             Contact
           </Link>
         </HStack>
+      </Box>
 
-        {/* Menu displays for small screens (mobile devices) */}
-        <Box display={["block", "none", "none"]} mt={[10, 0, 0]}>
-          <Collapse in={isOpen}>
-            <VStack mt={5} textAlign="center">
-              <Link
-                href="#about"
-                px={2}
-                py={2}
-                onClick={() => setActiveNav("#about")}
-                /*
+      {/* Menu displays for small screens (mobile devices) */}
+      <Box display={["block", "none", "none"]}>
+        <Collapse in={isOpen}>
+          <VStack mt="2rem" textAlign="center">
+            <Link
+              py="1rem"
+              onClick={() => setActiveNav("")}
+              textTransform="uppercase"
+              /*
                 variant={
                   activeNav === "#about" && colorMode === "dark"
                     ? "nav-link-active-dark"
@@ -120,15 +137,14 @@ const Navbar = () => {
                     : "nav-link-light"
                 }
                 */
-              >
-                Home
-              </Link>
-              <Link
-                href="#projects"
-                px={2}
-                py={2}
-                onClick={() => setActiveNav("#projects")}
-                /*
+            >
+              Home
+            </Link>
+            <Link
+              py="1rem"
+              onClick={() => setActiveNav()}
+              textTransform="uppercase"
+              /*
                 variant={
                   activeNav === "#projects" && colorMode === "dark"
                     ? "nav-link-active-dark"
@@ -139,15 +155,14 @@ const Navbar = () => {
                     : "nav-link-light"
                 }
                 */
-              >
-                Portfolio
-              </Link>
-              <Link
-                href="#contact"
-                px={2}
-                py={2}
-                onClick={() => setActiveNav("#contact")}
-                /*
+            >
+              Portfolio
+            </Link>
+            <Link
+              py="1rem"
+              onClick={() => setActiveNav()}
+              textTransform="uppercase"
+              /*
                 variant={
                   activeNav === "#contact" && colorMode === "dark"
                     ? "nav-link-active-dark"
@@ -158,12 +173,11 @@ const Navbar = () => {
                     : "nav-link-light"
                 }
                 */
-              >
-                Contact Me
-              </Link>
-            </VStack>
-          </Collapse>
-        </Box>
+            >
+              Contact Me
+            </Link>
+          </VStack>
+        </Collapse>
       </Box>
     </Box>
   );

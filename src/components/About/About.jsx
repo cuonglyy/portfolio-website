@@ -8,34 +8,21 @@ import {
   Heading,
   Text,
   GridItem,
+  Button,
 } from "@chakra-ui/react";
 import Typed from "react-typed";
 import ME from "../../assets/pic.png";
 import CTA from "./CTA.jsx";
 import Socials from "./Socials.jsx";
 import desktopHero from "../../assets/image-homepage-hero.jpg";
+import arrowIcon from "../../assets/icons/down-arrows.svg";
 
 const About = () => {
   return (
     {
       /* 
         Saving this for later
-          <Typed
-          strings={[
-            "Front-End Developer.",
-            "Software Engineer.",
-            "Badminton Player.",
-            "Cat and Dog Lover.",
-          ]}
-          typeSpeed={35}
-          backSpeed={25}
-          loop
-        >
-          <Text
-            as="span"
-            fontWeight="bold"
-            fontSize={["2xl", "2xl", "3xl"]}
-          />
+          
       */
     },
     {
@@ -48,14 +35,46 @@ const About = () => {
       */
     },
     (
-      <Container id="heading" px="0" maxW="auto">
-        <Box>
-          <Image
-            src={desktopHero}
-            alt="An example of one of my projects being displayed on a monitor"
-            mx="auto"
-          />
-          <Heading backgroundColor="white" display="inline-block" position='relative' top="-5rem">Hello, I'm Cuong</Heading>
+      <Container id="heading" px="0" maxW="111rem">
+        <Box
+          position="relative"
+          bgImage={desktopHero}
+          bgPosition="center"
+          h="60rem"
+        >
+          <Box
+            position="absolute"
+            backgroundColor="white"
+            display="inline-block"
+            bottom={0}
+            maxW="50rem"
+          >
+            <Heading
+              fontWeight="700"
+              fontSize="4rem"
+              m="5.5rem 4.5rem 5.5rem 0"
+            >
+              Hello, I'm Cuong and I'm a
+              <Typed
+                strings={[
+                  " Front-End Developer.",
+                  " Software Engineer.",
+                  " Badminton Player.",
+                  " Cat and Dog Lover.",
+                ]}
+                typeSpeed={40}
+                backSpeed={35}
+                loop
+              >
+                <Text
+                  as="span"
+                  fontWeight="700"
+                  fontSize={["2xl", "2xl", "4rem"]}
+                />
+              </Typed>
+            </Heading>
+            <Button variant="primary">About Me</Button>
+          </Box>
         </Box>
       </Container>
     )

@@ -1,34 +1,34 @@
-import { defineStyleConfig } from '@chakra-ui/react'
+import { defineStyleConfig } from "@chakra-ui/react";
 
 const Link = defineStyleConfig({
+  /* =====  
+  
+      Not working ):<
+  
+  ====== */
   baseStyle: {
+    letterSpacing: "0.2rem",
+    position: "relative",
+    color: "#00000",
     _hover: {
-      textDecoration: "none",
-    },
-    letterSpacing: '1px'
-  },
-  variants: {
-    'nav-link-dark': {
-      _hover: {
-        color: 'white',
-        textShadow: '0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff'
+      color: "#00000",
+      _before: {
+        transform: "scaleX(1)",
       },
     },
-    'nav-link-light': {
-      _hover: {
-        color: 'black',
-        textShadow: '0 0 9px #000'
+
+    _before: {
+      content: `""`,
+      position: "absolute",
+      width: "100%",
+      h: "0.2rem",
+      bottom: "0",
+      left: "0",
+      bgColor: "#00000",
+      transform: "scaleX(0)",
+      transition: "transform 0.3s ease",
     },
   },
-    'nav-link-active-dark': {
-      color: 'white',
-      textShadow: '0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff',
-    },
-    'nav-link-active-light': {
-      color: 'black',
-      textShadow: '0 0 9px #000'
-    },
-  }
 });
 
-export default Link
+export default Link;

@@ -36,7 +36,12 @@ const Navbar = () => {
         alignItems="center"
         w="100%"
       >
-        <Link id="logo" fontSize="3.2rem" fontFamily={`'Ibarra Real Nova', sans-serif`}>
+        <Link
+          id="logo"
+          fontSize="3.2rem"
+          fontFamily={`'Ibarra Real Nova', sans-serif`}
+          _hover='none'
+        >
           lyqc.
         </Link>
         {/* Menu button that appears for collapse nav bar (small screen) */}

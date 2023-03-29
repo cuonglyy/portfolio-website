@@ -15,6 +15,19 @@ import desktopHero from "../../assets/image-homepage-hero.jpg";
 import Contact from "../Contact.jsx";
 
 const About = () => {
+  
+  const scrollToAbout = (selector, offset) => {
+    console.log(document.querySelector('#about').getBoundingClientRect().top);
+    console.log(document.body.getBoundingClientRect().top);
+    window.scrollTo({
+      behavior: "smooth",
+      top:
+        document.querySelector(selector).getBoundingClientRect().top -
+        document.body.getBoundingClientRect().top -
+        parseInt(offset)
+    })
+  };
+  
   return (
     <>
       <Container id="intro" px="0" maxW="111rem" mb="15rem">
@@ -48,17 +61,17 @@ const About = () => {
                 <Text
                   as="span"
                   fontWeight="700"
-                  fontSize={["2xl", "2xl", "4rem"]}
+                  fontSize={["4rem", "4rem", "4rem"]}
                 />
               </Typed>
             </Heading>
-            <Button position="absolute" bottom={0} variant="primary">
+            <Button onClick={() => scrollToAbout('#about', '198')} position="absolute" bottom={0} variant="primary">
               About Me
             </Button>
           </Box>
         </Box>
       </Container>
-      <Container id="about" px={0} mb="15rem" maxW="111rem">
+      <Container px={0} mb="15rem" maxW="111rem" id="about">
         <HStack justifyContent="center" gap={["6.9rem", "6.9rem", "15.5rem"]}>
           <Box
             bgGradient="linear(to-b, #E9F8FF, #C1E3FF)"

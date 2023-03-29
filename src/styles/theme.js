@@ -11,6 +11,7 @@ const styles = {
       fontSize: "1.6rem",
       fontFamily: `'Public Sans', sans-serif`,
       minHeight: '100vh',
+      bgColor: '#FAFAFA',
     },
     html: {
       scrollBehavior: "smooth",

@@ -5,9 +5,8 @@ const Button = defineStyleConfig({
         textTransform: 'uppercase',
         border: '1px solid black',
         borderRadius: 'none',
-        p: '2.3rem 3.2rem',
+        py: '2.3rem',
         letterSpacing: '0.2rem',
-        w: '16.2rem',
         cursor: 'pointer',
         fontWeight: '400',
     },
@@ -15,17 +14,19 @@ const Button = defineStyleConfig({
         primary: {
             fontSize: '1.2rem',
             bgColor: '#203A4C',
-            color: 'white',
+            color: '#FAFAFA',
+            px: '3.4rem',
             _hover: {
                 bgColor: '#5FB4A2'
             }
         },
         secondary: {
             fontSize: '1.2rem',
-            bgColor: 'white',
+            bgColor: '#FAFAFA',
+            px: '3.4rem',
             _hover: {
                 bgColor: '#33323D',
-                color: 'white',
+                color: '#FAFAFA',
             }
         },
     },

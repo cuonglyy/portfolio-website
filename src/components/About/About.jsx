@@ -27,7 +27,7 @@ const About = () => {
         >
           <Box
             position="absolute"
-            backgroundColor="white"
+            bgColor="#FAFAFA"
             display="inline-block"
             bottom={0}
             maxW="40rem"
@@ -72,9 +72,9 @@ const About = () => {
             alignItems="flex-start"
             justifyContent="space-around"
             h="60rem"
-            borderTop='2px'
-            borderBottom='2px'
-            borderColor='#EAEAEB'
+            borderTop="2px"
+            borderBottom="2px"
+            borderColor="#EAEAEB"
           >
             <Box>
               <Heading as="h1" fontSize="4rem" mb="2.8rem">
@@ -85,8 +85,8 @@ const About = () => {
                 efficient user-friendly web applications, looking for a role in
                 Front-End Development. I currently use React, JavaScript, HTML5,
                 and CSS3. I'm currently residing in San Jose, CA, but I'm also
-                available for remote work! Since you're already here,
-                I'd love for you to check out my work.
+                available for remote work! Since you're already here, I'd love
+                for you to check out my work.
               </Text>
             </Box>
             <Button variant="secondary">Go to Portfolio</Button>

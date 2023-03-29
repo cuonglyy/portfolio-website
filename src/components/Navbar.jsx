@@ -24,7 +24,7 @@ const Navbar = () => {
       as="nav"
       py={["3.2rem", "6.4rem", "6.4rem"]}
       mx={["3.2rem", "4rem", "16.5rem"]}
-      backgroundColor="white"
+      backgroundColor="#FAFAFA"
     >
       {/* 
         This section is wrapped in box tag for display flex

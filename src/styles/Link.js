@@ -7,6 +7,8 @@ const Link = defineStyleConfig({
   
   ====== */
   baseStyle: {
+    textTransform: 'uppercase',
+    fontSize: "1.2rem",
     letterSpacing: "0.2rem",
     position: "relative",
     color: "#00000",

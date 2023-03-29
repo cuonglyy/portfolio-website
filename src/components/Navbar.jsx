@@ -41,6 +41,7 @@ const Navbar = () => {
           fontSize="3.2rem"
           fontFamily={`'Ibarra Real Nova', sans-serif`}
           _hover='none'
+          textTransform='lowercase'
         >
           lyqc.
         </Link>
@@ -60,14 +61,10 @@ const Navbar = () => {
         {/* Navbar appears for desktop & tablet users */}
         <HStack
           display={["none", "flex", "flex"]}
-          spacing="3rem"
-          fontSize="1.2rem"
+          spacing="4rem"
         >
           <Link
-            px={2}
-            py={2}
             onClick={() => setActiveNav()}
-            textTransform="uppercase"
             /*
             variant={
               activeNav === "#about" && colorMode === "dark"
@@ -83,10 +80,7 @@ const Navbar = () => {
             Home
           </Link>
           <Link
-            px={2}
-            py={2}
             onClick={() => setActiveNav()}
-            textTransform="uppercase"
             /*
             variant={
               activeNav === "#projects" && colorMode === "dark"
@@ -102,10 +96,7 @@ const Navbar = () => {
             Portfolio
           </Link>
           <Link
-            px={2}
-            py={2}
             onClick={() => setActiveNav()}
-            textTransform="uppercase"
             /*
             variant={
               activeNav === "#contact" && colorMode === "dark"
@@ -130,7 +121,6 @@ const Navbar = () => {
             <Link
               py="1rem"
               onClick={() => setActiveNav("")}
-              textTransform="uppercase"
               /*
                 variant={
                   activeNav === "#about" && colorMode === "dark"
@@ -148,7 +138,6 @@ const Navbar = () => {
             <Link
               py="1rem"
               onClick={() => setActiveNav()}
-              textTransform="uppercase"
               /*
                 variant={
                   activeNav === "#projects" && colorMode === "dark"
@@ -166,7 +155,6 @@ const Navbar = () => {
             <Link
               py="1rem"
               onClick={() => setActiveNav()}
-              textTransform="uppercase"
               /*
                 variant={
                   activeNav === "#contact" && colorMode === "dark"

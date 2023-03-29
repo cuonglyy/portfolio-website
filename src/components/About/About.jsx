@@ -13,7 +13,6 @@ import Typed from "react-typed";
 import ME from "../../assets/pic.png";
 import desktopHero from "../../assets/image-homepage-hero.jpg";
 import Contact from "../Contact.jsx";
-import Footer from "../Footer.jsx";
 
 const About = () => {
   return (
@@ -60,13 +59,11 @@ const About = () => {
         </Box>
       </Container>
       <Container id="about" px={0} mb="15rem" maxW="111rem">
-        <HStack justifyContent="center" gap={["6.9rem", "6.9rem", "12.5rem"]}>
+        <HStack justifyContent="center" gap={["6.9rem", "6.9rem", "15.5rem"]}>
           <Box
             bgGradient="linear(to-b, #E9F8FF, #C1E3FF)"
-            flexShrink="0"
-            width={["28.1rem", "28.1rem", "39rem"]}
           >
-            <Image src={ME} />
+            <Image src={ME} h='60rem' objectFit='cover' w={["28.1rem", "28.1rem", "39rem"]} />
           </Box>
           <VStack
             alignItems="flex-start"
@@ -94,7 +91,6 @@ const About = () => {
         </HStack>
       </Container>
       <Contact />
-      <Footer />
     </>
   );
 };

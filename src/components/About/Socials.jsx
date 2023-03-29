@@ -1,23 +1,16 @@
 import React from "react";
 import { BsLinkedin } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
-import { Box, Link } from "@chakra-ui/react";
+import { HStack, Link } from "@chakra-ui/react";
 
-const Socials = () => {
+const Socials = ({fontSize, spacing}) => {
   return (
-    <Box
-      mt={10}
-      sx={{
-        display: "flex",
-        gap: "20px",
-        justifyContent: "center",
-        fontSize: "4xl",
-      }}
-    >
+    <HStack spacing={spacing}>
       <Link
         href="https://www.linkedin.com/in/lyqcuong/"
         target="_blank"
         _hover={{ color: "blue.200" }}
+        fontSize={fontSize}
       >
         <BsLinkedin />
       </Link>
@@ -25,10 +18,11 @@ const Socials = () => {
         href="https://github.com/cuonglyy"
         target="_blank"
         _hover={{ color: "blue.200" }}
+        fontSize={fontSize}
       >
         <FaGithub />
       </Link>
-    </Box>
+    </HStack>
   );
 };
 

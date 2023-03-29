@@ -8,7 +8,8 @@ const Button = defineStyleConfig({
         p: '2.3rem 3.2rem',
         letterSpacing: '0.2rem',
         w: '16.2rem',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        fontWeight: '400',
     },
     variants: {
         primary: {

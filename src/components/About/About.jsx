@@ -59,7 +59,7 @@ const About = () => {
           </Box>
         </Box>
       </Container>
-      <Container id="about" px={0} mb="10rem" maxW="111rem">
+      <Container id="about" px={0} mb="15rem" maxW="111rem">
         <HStack justifyContent="center" gap={["6.9rem", "6.9rem", "12.5rem"]}>
           <Box
             bgGradient="linear(to-b, #E9F8FF, #C1E3FF)"

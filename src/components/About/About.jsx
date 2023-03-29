@@ -83,7 +83,7 @@ const About = () => {
               <Text w="33.9rem" lineHeight="3rem">
                 I'm a dynamic software engineer with a passion in developing
                 efficient user-friendly web applications, looking for a role in
-                Front-End Development. I currently use React, JavaScript, HTML5,
+                Front-End Development. I currently use React, ChakraUI, JavaScript, HTML5,
                 and CSS3. I'm currently residing in San Jose, CA, but I'm also
                 available for remote work. Since you're already here, I'd love
                 for you to check out my work!

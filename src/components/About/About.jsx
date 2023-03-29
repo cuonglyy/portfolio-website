@@ -85,8 +85,8 @@ const About = () => {
                 efficient user-friendly web applications, looking for a role in
                 Front-End Development. I currently use React, JavaScript, HTML5,
                 and CSS3. I'm currently residing in San Jose, CA, but I'm also
-                available for remote work! Since you're already here, I'd love
-                for you to check out my work.
+                available for remote work. Since you're already here, I'd love
+                for you to check out my work!
               </Text>
             </Box>
             <Button variant="secondary">Go to Portfolio</Button>

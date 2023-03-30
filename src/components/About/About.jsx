@@ -12,6 +12,7 @@ import {
 import Typed from "react-typed";
 import ME from "../../assets/pic.png";
 import desktopHero from "../../assets/image-homepage-hero.jpg";
+
 import Contact from "../Contact.jsx";
 
 const About = () => {
@@ -76,7 +77,7 @@ const About = () => {
         </Box>
       </Container>
       <Container px={0} mb="15rem" maxW="111rem" id="about">
-        <HStack justifyContent="center" gap={["6.9rem", "6.9rem", "15.5rem"]}>
+        <HStack justifyContent="center" gap={["6.9rem", "6.9rem", "14rem"]}>
           <Box bgGradient="linear(to-b, #E9F8FF, #C1E3FF)">
             <Image
               src={ME}
@@ -93,11 +94,11 @@ const About = () => {
             borderBottom="2px"
             borderColor="#EAEAEB"
           >
-            <Box>
+            <Box maxW="34rem">
               <Heading as="h1" fontSize="4rem" mb="2.8rem">
                 About Me
               </Heading>
-              <Text w="33.9rem" lineHeight="3rem">
+              <Text lineHeight="3rem">
                 I'm a dynamic software engineer with a passion in developing
                 efficient user-friendly web applications, looking for a role in
                 Front-End Development. I currently use React, ChakraUI,

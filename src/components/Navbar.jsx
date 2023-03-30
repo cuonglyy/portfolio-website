@@ -14,9 +14,6 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
-  /* For Navbar (Desktop & Tablet users) */
-  const [activeNav, setActiveNav] = useState("#");
-
   return (
     <Box
       display="flex"
@@ -40,8 +37,8 @@ const Navbar = () => {
           id="logo"
           fontSize="3.2rem"
           fontFamily={`'Ibarra Real Nova', sans-serif`}
-          _hover='none'
-          textTransform='lowercase'
+          _hover="none"
+          textTransform="lowercase"
         >
           lyqc.
         </Link>
@@ -55,16 +52,14 @@ const Navbar = () => {
           ml="auto"
           backgroundColor="transparent"
           _hover="none"
-          fontSize="1.3rem"
+          fontSize="2.4rem"
+          border="none"
         />
 
         {/* Navbar appears for desktop & tablet users */}
-        <HStack
-          display={["none", "flex", "flex"]}
-          spacing="4rem"
-        >
+        <HStack display={["none", "flex", "flex"]} spacing="4rem">
           <Link
-            onClick={() => setActiveNav()}
+            className="link"
             /*
             variant={
               activeNav === "#about" && colorMode === "dark"
@@ -80,7 +75,7 @@ const Navbar = () => {
             Home
           </Link>
           <Link
-            onClick={() => setActiveNav()}
+            className="link"
             /*
             variant={
               activeNav === "#projects" && colorMode === "dark"
@@ -96,7 +91,7 @@ const Navbar = () => {
             Portfolio
           </Link>
           <Link
-            onClick={() => setActiveNav()}
+            className="link"
             /*
             variant={
               activeNav === "#contact" && colorMode === "dark"
@@ -120,7 +115,6 @@ const Navbar = () => {
           <VStack mt="2rem" textAlign="center">
             <Link
               py="1rem"
-              onClick={() => setActiveNav("")}
               /*
                 variant={
                   activeNav === "#about" && colorMode === "dark"
@@ -137,7 +131,6 @@ const Navbar = () => {
             </Link>
             <Link
               py="1rem"
-              onClick={() => setActiveNav()}
               /*
                 variant={
                   activeNav === "#projects" && colorMode === "dark"
@@ -154,7 +147,6 @@ const Navbar = () => {
             </Link>
             <Link
               py="1rem"
-              onClick={() => setActiveNav()}
               /*
                 variant={
                   activeNav === "#contact" && colorMode === "dark"

@@ -15,18 +15,17 @@ import desktopHero from "../../assets/image-homepage-hero.jpg";
 import Contact from "../Contact.jsx";
 
 const About = () => {
-  
+
   const scrollToAbout = (selector, offset) => {
-    console.log(document.querySelector('#about').getBoundingClientRect().top);
-    console.log(document.body.getBoundingClientRect().top);
     window.scrollTo({
       behavior: "smooth",
       top:
         document.querySelector(selector).getBoundingClientRect().top -
         document.body.getBoundingClientRect().top -
-        parseInt(offset)
-    })
+        parseInt(offset),
+    });
   };
+
   
   return (
     <>
@@ -65,7 +64,12 @@ const About = () => {
                 />
               </Typed>
             </Heading>
-            <Button onClick={() => scrollToAbout('#about', '198')} position="absolute" bottom={0} variant="primary">
+            <Button
+              onClick={() => scrollToAbout("#about", "198")}
+              position="absolute"
+              bottom={0}
+              variant="primary"
+            >
               About Me
             </Button>
           </Box>
@@ -73,10 +77,13 @@ const About = () => {
       </Container>
       <Container px={0} mb="15rem" maxW="111rem" id="about">
         <HStack justifyContent="center" gap={["6.9rem", "6.9rem", "15.5rem"]}>
-          <Box
-            bgGradient="linear(to-b, #E9F8FF, #C1E3FF)"
-          >
-            <Image src={ME} h='60rem' objectFit='cover' w={["28.1rem", "28.1rem", "39rem"]} />
+          <Box bgGradient="linear(to-b, #E9F8FF, #C1E3FF)">
+            <Image
+              src={ME}
+              h="60rem"
+              objectFit="cover"
+              w={["28.1rem", "28.1rem", "39rem"]}
+            />
           </Box>
           <VStack
             alignItems="flex-start"
@@ -93,10 +100,10 @@ const About = () => {
               <Text w="33.9rem" lineHeight="3rem">
                 I'm a dynamic software engineer with a passion in developing
                 efficient user-friendly web applications, looking for a role in
-                Front-End Development. I currently use React, ChakraUI, JavaScript, HTML5,
-                and CSS3. I'm currently residing in San Jose, CA, but I'm also
-                available for remote work. Since you're already here, I'd love
-                for you to check out my work!
+                Front-End Development. I currently use React, ChakraUI,
+                JavaScript, HTML5, and CSS3. I'm currently residing in San Jose,
+                CA, but I'm also available for remote work. Since you're already
+                here, I'd love for you to check out my work!
               </Text>
             </Box>
             <Button variant="secondary">Go to Portfolio</Button>

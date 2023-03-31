@@ -3,7 +3,6 @@ import { defineStyleConfig } from "@chakra-ui/react";
 const Button = defineStyleConfig({
     baseStyle: {
         textTransform: 'uppercase',
-        border: '1px solid black',
         borderRadius: 'none',
         py: '2.3rem',
         letterSpacing: '0.2rem',
@@ -22,6 +21,7 @@ const Button = defineStyleConfig({
         },
         secondary: {
             fontSize: '1.2rem',
+            border: '1px solid black',
             bgColor: '#FAFAFA',
             px: '3.4rem',
             _hover: {

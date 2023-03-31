@@ -34,13 +34,13 @@ const About = () => {
           position={["relative", "relative", "relative"]}
           bgImage={[mobileHero, tabletHero, desktopHero]}
           bgPosition={["center top", "center", "center"]}
+          bgSize={['contain', 'auto', 'auto']}
           bgRepeat="no-repeat"
           h="60rem"
         >
           <Box
             position={["absolute", "absolute", "absolute"]}
             bgColor="#FAFAFA"
-            display={["block", "inline-block", "inline-block"]}
             bottom={0}
             maxW="40rem"
             h={["29rem", "25rem", "28rem"]}
@@ -70,7 +70,7 @@ const About = () => {
               </Typed>
             </Heading>
             <Button
-              onClick={() => scrollToAbout("#about", "198")}
+              onClick={() => scrollToAbout("#about", ["-598", "198", "198"])}
               position="absolute"
               bottom={0}
               variant="primary"
@@ -81,7 +81,7 @@ const About = () => {
         </Box>
       </Container>
       <Container px={0} mb={["11.5rem", "9.6rem", "15rem"]} maxW="111rem" id="about">
-        <Stack flexDirection={['column', 'row', 'row']} justifyContent="center" gap={["0", "4rem", "4rem", "15.5rem"]}>
+        <Stack flexDirection={['column', 'row', 'row']} justifyContent="center" gap={["3.2rem", "4rem", "4rem", "15.5rem"]}>
           <Box bgGradient="linear(to-b, #E9F8FF, #C1E3FF)">
             <Image
               src={ME}
@@ -94,16 +94,16 @@ const About = () => {
           <VStack
             alignItems="flex-start"
             justifyContent="space-around"
-            h={["62rem", "60rem", "60rem"]}
+            h={["60rem", "60rem", "60rem"]}
             borderTop="2px"
             borderBottom="2px"
             borderColor="#EAEAEB"
           >
-            <Box maxW="34rem">
+            <Box maxW={["auto", "34rem", "34rem"]}>
               <Heading as="h1" fontSize="4rem" mb="2.8rem">
                 About Me
               </Heading>
-              <Text w={["31.1rem", "33.9rem", "33.9rem"]} lineHeight="3rem">
+              <Text w={["auto", "auto", "33.9rem"]} lineHeight="3rem">
                 I'm a dynamic software engineer with a passion in developing
                 efficient user-friendly web applications, looking for a role in
                 Front-End Development. I currently use React, ChakraUI,

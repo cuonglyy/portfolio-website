@@ -7,6 +7,7 @@ import {
   IconButton,
   Collapse,
 } from "@chakra-ui/react";
+import { Link as RouterLink } from "react-router-dom";
 import { AiOutlineMenu } from "react-icons/ai";
 
 const Navbar = () => {
@@ -34,6 +35,8 @@ const Navbar = () => {
         w="100%"
       >
         <Link
+          as={RouterLink}
+          to="/"
           id="logo"
           fontSize="3.2rem"
           fontFamily={`'Ibarra Real Nova', sans-serif`}
@@ -58,52 +61,13 @@ const Navbar = () => {
 
         {/* Navbar appears for desktop & tablet users */}
         <HStack display={["none", "flex", "flex"]} spacing="4rem">
-          <Link
-            className="link"
-            /*
-            variant={
-              activeNav === "#about" && colorMode === "dark"
-                ? "nav-link-active-dark"
-                : activeNav === "#about"
-                ? "nav-link-active-light"
-                : colorMode === "dark"
-                ? "nav-link-dark"
-                : "nav-link-light"
-            }
-            */
-          >
+          <Link className="link" as={RouterLink} to="/">
             Home
           </Link>
-          <Link
-            className="link"
-            /*
-            variant={
-              activeNav === "#projects" && colorMode === "dark"
-                ? "nav-link-active-dark"
-                : activeNav === "#projects"
-                ? "nav-link-active-light"
-                : colorMode === "dark"
-                ? "nav-link-dark"
-                : "nav-link-light"
-            }
-            */
-          >
+          <Link className="link" as={RouterLink} to="/portfolio">
             Portfolio
           </Link>
-          <Link
-            className="link"
-            /*
-            variant={
-              activeNav === "#contact" && colorMode === "dark"
-                ? "nav-link-active-dark"
-                : activeNav === "#contact"
-                ? "nav-link-active-light"
-                : colorMode === "dark"
-                ? "nav-link-dark"
-                : "nav-link-light"
-            }
-            */
-          >
+          <Link className="link" as={RouterLink} to="/contactme">
             Contact
           </Link>
         </HStack>
@@ -113,52 +77,13 @@ const Navbar = () => {
       <Box display={["block", "none", "none"]}>
         <Collapse in={isOpen}>
           <VStack mt="2rem" textAlign="center">
-            <Link
-              py="1rem"
-              /*
-                variant={
-                  activeNav === "#about" && colorMode === "dark"
-                    ? "nav-link-active-dark"
-                    : activeNav === "#about"
-                    ? "nav-link-active-light"
-                    : colorMode === "dark"
-                    ? "nav-link-dark"
-                    : "nav-link-light"
-                }
-                */
-            >
+            <Link py="1rem" as={RouterLink} to="/">
               Home
             </Link>
-            <Link
-              py="1rem"
-              /*
-                variant={
-                  activeNav === "#projects" && colorMode === "dark"
-                    ? "nav-link-active-dark"
-                    : activeNav === "#projects"
-                    ? "nav-link-active-light"
-                    : colorMode === "dark"
-                    ? "nav-link-dark"
-                    : "nav-link-light"
-                }
-                */
-            >
+            <Link py="1rem" as={RouterLink} to="/portfolio">
               Portfolio
             </Link>
-            <Link
-              py="1rem"
-              /*
-                variant={
-                  activeNav === "#contact" && colorMode === "dark"
-                    ? "nav-link-active-dark"
-                    : activeNav === "#contact"
-                    ? "nav-link-active-light"
-                    : colorMode === "dark"
-                    ? "nav-link-dark"
-                    : "nav-link-light"
-                }
-                */
-            >
+            <Link py="1rem" as={RouterLink} to="/contactme">
               Contact Me
             </Link>
           </VStack>

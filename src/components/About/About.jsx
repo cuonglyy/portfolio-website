@@ -99,7 +99,7 @@ const About = () => {
             borderBottom="2px"
             borderColor="#EAEAEB"
           >
-            <Box>
+            <Box maxW="34rem">
               <Heading as="h1" fontSize="4rem" mb="2.8rem">
                 About Me
               </Heading>
